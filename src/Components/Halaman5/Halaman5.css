@@ -14,52 +14,73 @@
     backdrop-filter: blur(100px);
 }
 
-.card-image {
-    grid-area: 1 / 1 / 2 / 2;
+/* ----- pengaturan caraousel ----- */
+.carousel-main {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.carousel-container {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.card-content {
-    grid-area: 1 / 1 / 2 / 2;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-.card-container-wrapper {
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    transition: 0.5s;
-}
-
-.blur-container {
+    overflow: hidden;
     position: relative;
-    transition: 0.5s;
+    max-width: 1200px;
 }
 
-/* Pseudo-elemen untuk efek blur di sisi kiri dan kanan */
-.blur-container::before,
-.blur-container::after {
-    content: "";
+.carousel {
+    display: flex;
+    width: max-content;
+}
+  
+.carousel-item {
+    position: relative;
+    flex: 0 0 auto;
+    margin-right: 30px;
+}
+  
+.carousel-item img {
+    width: 350px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+  
+.overlay {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    pointer-events: none;
-    z-index: 10;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    top: 82%;
+    left: 0%;
+    /* transform: translate(-50%, 100%); */
+    display: none;
+    z-index: 1;
+    margin: 0 7% 0% 7%;
 }
 
-.blur-container::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(0,0,0,1), transparent);
+.overlay span {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 9px;
+    font-weight: lighter;
+}
+  
+.carousel-item:hover img {
+    filter: blur(3px) brightness(60%);
+    transition: filter 0.3s ease;
+}
+  
+.carousel-item:hover .overlay {
+    display: block;
 }
 
-.blur-container::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(0,0,0,1) 40%, transparent);
-}
+/* ----- pengaturan caraousel ----- */
 
 /* Responsive adjustments */
 @media (min-width: 768px) {

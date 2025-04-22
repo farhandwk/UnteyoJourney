@@ -1,10 +1,100 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Cards from './Card';
 import './Halaman5.css';
 
 function Halaman5() {
-  const cards = Cards; 
-  const [hoveredCardId, setHoveredCardId] = useState(null);
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const containerRef = useRef(null);
+  const carouselRef = useRef(null);
+  const scrollPos = useRef(0);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const dragStartScroll = useRef(0);
+
+  // Auto scroll
+  useEffect(() => {
+      const interval = setInterval(() => {
+          if (!isHovered && containerRef.current && carouselRef.current) {
+              scrollPos.current += 1;
+
+              const maxScroll = carouselRef.current.scrollWidth / 2;
+              if (scrollPos.current >= maxScroll) {
+                  scrollPos.current = 0;
+              }
+
+              containerRef.current.scrollLeft = scrollPos.current;
+          }
+      }, 20);
+
+      return () => clearInterval(interval);
+  }, [isHovered]);
+
+  // Loop scroll secara seamless
+  useEffect(() => {
+      const container = containerRef.current;
+      const carousel = carouselRef.current;
+
+      if (!container || !carousel) return;
+
+      const handleScroll = () => {
+          const maxScroll = carousel.scrollWidth / 2;
+          const current = container.scrollLeft;
+
+          if (current >= maxScroll) {
+              container.scrollLeft = current - maxScroll;
+              scrollPos.current = current - maxScroll;
+          } else if (current <= 0) {
+              container.scrollLeft = current + maxScroll;
+              scrollPos.current = current + maxScroll;
+          } else {
+              scrollPos.current = current;
+          }
+      };
+
+      container.addEventListener("scroll", handleScroll);
+      return () => container.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Drag to scroll
+  useEffect(() => {
+      const container = containerRef.current;
+      if (!container) return;
+
+      const onMouseDown = (e) => {
+          isDragging.current = true;
+          startX.current = e.pageX;
+          dragStartScroll.current = container.scrollLeft;
+          container.classList.add("active");
+          document.body.style.userSelect = "none";
+      };
+
+      const onMouseMove = (e) => {
+          if (!isDragging.current) return;
+          e.preventDefault();
+          const dx = e.pageX - startX.current;
+          container.scrollLeft = dragStartScroll.current - dx;
+      };
+
+      const endDrag = () => {
+          isDragging.current = false;
+          container.classList.remove("active");
+          document.body.style.userSelect = "";
+      };
+
+      container.addEventListener("pointerdown", onMouseDown);
+      container.addEventListener("pointermove", onMouseMove);
+      container.addEventListener("pointerup", endDrag);
+      container.addEventListener("pointerleave", endDrag);        
+
+      return () => {
+          container.addEventListener("pointerdown", onMouseDown);
+          container.addEventListener("pointermove", onMouseMove);
+          container.addEventListener("pointerup", endDrag);
+          container.addEventListener("pointerleave", endDrag);            
+      };
+  }, []);
 
   return (
     <div className="bg-[black]">
@@ -12,47 +102,32 @@ function Halaman5() {
         <h2 className="HelveticaBold text-[white] text-[25px] mt-[100px] lg:text-[40px]">
           Past Events
         </h2>
-        <div
-          className="card-container-wrapper gap-[50px] w-[90%] h-max flex flex-row  justify-start items-center mt-[30px]"
-        >
-          {Cards.map((card) => (
-                <div
-                  key={card.id}
-                  className="card grid w-[200px] h-fit flex-shrink-0 lg:w-[350px] lg:min-w-[350px] lg:mt-[50px]"
-                  data-id={card.id}
-                  onMouseOver={() => setHoveredCardId(card.id)}
-                  onMouseOut={() => setHoveredCardId(null)}
-                  style={{
-                    '--position': `${card.id}`,
-                    width: '200px',
-                    marginRight: card.id !== cards.length - 1 ? '16px' : '0px',
-                  }}
-                >
-                  <img
-                    src={card.gambar}
-                    alt={card.judul}
-                    className="card-image rounded-[10px]"
-                  />
-                  <div
-                    className="card-content flex flex-col w-full h-full text-[white] backdrop-blur-[10px] justify-end p-[7%] rounded-[10px]"
-                    style={{
-                      opacity: hoveredCardId === card.id ? '1' : '0',
-                      transition: '0.5s',
-                    }}
-                  >
-                    <h2 className="card-title HelveticaBold text-[12px]">
-                      {card.judul}
-                    </h2>
-                    <div className="containerDateLoc Helvetica w-full h-fit flex flex-row gap-[2px] text-[9px]">
-                      <h3>Date:</h3>
-                      <p className="card-date">{card.date}</p>
+
+        {/* Carousel Section */}
+        <section className='carousel-main'>
+          <div
+            className="carousel-container"
+            ref={containerRef}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}>
+
+              <div className="carousel" ref={carouselRef}>
+                {[...Cards, ...Cards].map((item, index) => (
+                  <div className="carousel-item" key={index}>
+                  <img src={item.gambar} alt={`gambar${index + 1}`} draggable={false} />
+                    <div className="overlay">
+                      <p>{item.judul}</p>
+                      <span>Date : {item.date}</span>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-        </div>
+                ))}
+              </div>
+          </div>
+        </section>
+        {/* Carousel Section */}
+
       </div>
+    </div>
   );
 }
 
