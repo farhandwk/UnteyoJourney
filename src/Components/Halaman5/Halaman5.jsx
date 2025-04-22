@@ -2,9 +2,16 @@ import React, { useState } from 'react';
 import Cards from './Card';
 import './Halaman5.css';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/autoplay';
+import { Autoplay, FreeMode } from 'swiper/modules';
+
 function Halaman5() {
-  const cards = Cards; 
+  const cards = Cards;
   const [hoveredCardId, setHoveredCardId] = useState(null);
+  const [isHovering, setIsHovering] = useState(false);
 
   return (
     <div className="bg-[black]">
@@ -12,21 +19,40 @@ function Halaman5() {
         <h2 className="HelveticaBold text-[white] text-[25px] mt-[100px] lg:text-[40px]">
           Past Events
         </h2>
-        <div
-          className="card-container-wrapper gap-[50px] w-[90%] h-max flex flex-row  justify-start items-center mt-[30px]"
-        >
-          {Cards.map((card) => (
+        <div className="card-container-wrapper w-[65%] h-max mt-[30px]">
+          <Swiper
+            modules={[Autoplay, FreeMode]}
+            spaceBetween={0}
+            slidesPerView={3}
+            freeMode={true}
+            centeredSlides={true}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            speed={3000}
+            loop={true}
+            grabCursor={false}
+            onSwiper={(swiper) => {
+              if (isHovering) swiper.autoplay.stop();
+              else swiper.autoplay.start();
+            }}
+          >
+            {cards.map((card) => (
+              <SwiperSlide
+                key={card.id}
+                onMouseEnter={() => {
+                  setHoveredCardId(card.id);
+                  setIsHovering(true);
+                }}
+                onMouseLeave={() => {
+                  setHoveredCardId(null);
+                  setIsHovering(false);
+                }}
+              >
                 <div
-                  key={card.id}
                   className="card grid w-[200px] h-fit flex-shrink-0 lg:w-[350px] lg:min-w-[350px] lg:mt-[50px]"
-                  data-id={card.id}
-                  onMouseOver={() => setHoveredCardId(card.id)}
-                  onMouseOut={() => setHoveredCardId(null)}
-                  style={{
-                    '--position': `${card.id}`,
-                    width: '200px',
-                    marginRight: card.id !== cards.length - 1 ? '16px' : '0px',
-                  }}
                 >
                   <img
                     src={card.gambar}
@@ -49,10 +75,12 @@ function Halaman5() {
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
+    </div>
   );
 }
 

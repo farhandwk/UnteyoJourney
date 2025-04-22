@@ -11,7 +11,6 @@
 .containerHal5 {
     background: none;
     overflow: hidden;
-    backdrop-filter: blur(100px);
 }
 
 .card-image {
@@ -28,37 +27,13 @@
 }
 
 .card-container-wrapper {
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
     transition: 0.5s;
+    padding-left: 50px; /*perlu perbaikan agar center dgn code yg rapi*/
 }
 
 .blur-container {
     position: relative;
     transition: 0.5s;
-}
-
-/* Pseudo-elemen untuk efek blur di sisi kiri dan kanan */
-.blur-container::before,
-.blur-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.blur-container::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(0,0,0,1), transparent);
-}
-
-.blur-container::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(0,0,0,1) 40%, transparent);
 }
 
 /* Responsive adjustments */
