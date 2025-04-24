@@ -3,7 +3,6 @@ import Cards from './Card';
 import './Halaman5.css';
 
 function Halaman5() {
-
   const [isHovered, setIsHovered] = useState(false);
 
   const containerRef = useRef(null);
