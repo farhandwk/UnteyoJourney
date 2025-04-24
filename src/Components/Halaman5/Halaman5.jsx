@@ -4,6 +4,7 @@ import './Halaman5.css';
 
 function Halaman5() {
   const [isHovered, setIsHovered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const containerRef = useRef(null);
   const carouselRef = useRef(null);
@@ -12,12 +13,35 @@ function Halaman5() {
   const startX = useRef(0);
   const dragStartScroll = useRef(0);
 
+  // cek viewport 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.3, // 0.3 artinya 30% bagian elemen terlihat baru dianggap muncul
+      }
+    );
+  
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+  
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   // Auto scroll
   useEffect(() => {
     let animationFrameId;
+    let timeoutId;
   
     const autoScroll = () => {
-      if (!isHovered && containerRef.current && carouselRef.current) {
+      if (isVisible && !isHovered && !isDragging.current && containerRef.current && carouselRef.current) {
         scrollPos.current += 1;
         const maxScroll = carouselRef.current.scrollWidth / 2;
   
@@ -29,36 +53,18 @@ function Halaman5() {
       }
       animationFrameId = requestAnimationFrame(autoScroll);
     };
-    autoScroll();
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [isHovered]);
-  
+    
+    // Tambahkan delay 500ms sebelum mulai auto scroll
+    timeoutId = setTimeout(() => {
+      autoScroll();
+    }, 1000);
 
-  // Loop scroll secara seamless
-  useEffect(() => {
-      const container = containerRef.current;
-      const carousel = carouselRef.current;
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      clearTimeout(timeoutId);
+    };
 
-      if (!container || !carousel) return;
-
-      const handleScroll = () => {
-          const maxScroll = carousel.scrollWidth / 2;
-          const current = container.scrollLeft;
-
-          if (current >= maxScroll) {
-              container.scrollLeft = current - maxScroll;
-              scrollPos.current = current - maxScroll;
-          } else if (current <= 0) {
-              container.scrollLeft = current + maxScroll;
-              scrollPos.current = current + maxScroll;
-          } else {
-              scrollPos.current = current;
-          }
-      };
-
-      container.addEventListener("scroll", handleScroll);
-      return () => container.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHovered, isVisible]);
 
   // Drag to scroll
   useEffect(() => {
@@ -119,7 +125,7 @@ function Halaman5() {
         <section className="
           flex 
           flex-row 
-          w-[80%] 
+          w-[80%]
           h-[550px] 
           justify-center 
           items-center 
@@ -129,7 +135,7 @@ function Halaman5() {
             w-full 
             overflow-hidden 
             relative 
-            max-w-[1200px]"
+            max-w-[1375px]"
             
             ref={containerRef}
             onMouseEnter={() => setIsHovered(true)}
