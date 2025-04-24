@@ -14,21 +14,25 @@ function Halaman5() {
 
   // Auto scroll
   useEffect(() => {
-      const interval = setInterval(() => {
-          if (!isHovered && containerRef.current && carouselRef.current) {
-              scrollPos.current += 1;
+    let animationFrameId;
+  
+    const autoScroll = () => {
+      if (!isHovered && containerRef.current && carouselRef.current) {
+        scrollPos.current += 1;
+        const maxScroll = carouselRef.current.scrollWidth / 2;
+  
+        if (scrollPos.current >= maxScroll) {
+          scrollPos.current = 0;
+        }
 
-              const maxScroll = carouselRef.current.scrollWidth / 2;
-              if (scrollPos.current >= maxScroll) {
-                  scrollPos.current = 0;
-              }
-
-              containerRef.current.scrollLeft = scrollPos.current;
-          }
-      }, 20);
-
-      return () => clearInterval(interval);
+        containerRef.current.scrollLeft = scrollPos.current;
+      }
+      animationFrameId = requestAnimationFrame(autoScroll);
+    };
+    autoScroll();
+    return () => cancelAnimationFrame(animationFrameId);
   }, [isHovered]);
+  
 
   // Loop scroll secara seamless
   useEffect(() => {
@@ -192,3 +196,28 @@ function Halaman5() {
 }
 
 export default Halaman5;
+
+/*
+  Konsep Auto Scroll Loop (Tanpa Potong atau Lompat)
+
+  1.  duplikat isi konten:
+      [ A ][ B ][ C ][ A ][ B ][ C ]
+
+  2.  Digeser dengan animationscrollId
+
+  3.  Saat scroll mencapai akhir salinan (maxScroll), yaitu pertengahan total konten,
+      scroll akan di-reset ke awal (scrollLeft = 0)..
+
+      Karena konten yang ditampilkan di akhir salinan sama dengan yang asli di awal,
+      reset scrollLeft ke 0 tidak terlihat sebagai "lompat" — tampilannya tetap mulus.
+
+      [ A ][ B ][ C ] + [ A ][ B ][ C ]
+        ^                         ^
+      scrollLeft=0       scrollLeft=maxScroll
+
+                          ⇩ RESET KE ⇩
+
+                        [ A ][ B ][ C ] + [ A ][ B ][ C ]
+
+                        ^ scrollLeft=0 lagi, tapi kontennya sama
+*/
