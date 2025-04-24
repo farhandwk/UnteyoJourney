@@ -13,9 +13,20 @@
     overflow: hidden;
 }
 
-.card-image {
-    grid-area: 1 / 1 / 2 / 2;
+/* ----- pengaturan caraousel ----- */
+.carousel-main {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.carousel-container {
     width: 100%;
+<<<<<<< HEAD
     height: 100%;
     object-fit: cover;
 }
@@ -32,10 +43,66 @@
 }
 
 .blur-container {
+=======
+    overflow: hidden;
+>>>>>>> origin/main
     position: relative;
-    transition: 0.5s;
+    max-width: 1200px;
 }
 
+<<<<<<< HEAD
+=======
+.carousel {
+    display: flex;
+    width: max-content;
+}
+  
+.carousel-item {
+    position: relative;
+    flex: 0 0 auto;
+    margin-right: 30px;
+}
+  
+.carousel-item img {
+    width: 350px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+  
+.overlay {
+    position: absolute;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    top: 82%;
+    left: 0%;
+    /* transform: translate(-50%, 100%); */
+    display: none;
+    z-index: 1;
+    margin: 0 7% 0% 7%;
+}
+
+.overlay span {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 9px;
+    font-weight: lighter;
+}
+  
+.carousel-item:hover img {
+    filter: blur(3px) brightness(60%);
+    transition: filter 0.3s ease;
+}
+  
+.carousel-item:hover .overlay {
+    display: block;
+}
+
+/* ----- pengaturan caraousel ----- */
+
+>>>>>>> origin/main
 /* Responsive adjustments */
 @media (min-width: 768px) {
     .containerHal5 {
