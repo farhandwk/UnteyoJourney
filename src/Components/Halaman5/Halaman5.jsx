@@ -97,30 +97,91 @@ function Halaman5() {
 
   return (
     <div className="bg-[black]">
-      <div className="containerHal5 flex flex-col items-center">
-        <h2 className="HelveticaBold text-[white] text-[25px] mt-[100px] lg:text-[40px]">
+      <div className="
+        containerHal5 
+        flex 
+        flex-col 
+        items-center">
+
+        <h2 className="
+          HelveticaBold 
+          text-[white] 
+          text-[25px] mt-[100px] lg:text-[40px]">
+
           Past Events
         </h2>
 
         {/* Carousel Section */}
-        <section className='carousel-main'>
-          <div
-            className="carousel-container"
+        <section className="
+          flex 
+          flex-row 
+          w-[80%] 
+          h-[550px] 
+          justify-center 
+          items-center 
+          mx-auto">
+
+          <div className="
+            w-full 
+            overflow-hidden 
+            relative 
+            max-w-[1200px]"
+            
             ref={containerRef}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}>
 
-              <div className="carousel" ref={carouselRef}>
-                {[...Cards, ...Cards].map((item, index) => (
-                  <div className="carousel-item" key={index}>
-                  <img src={item.gambar} alt={`gambar${index + 1}`} draggable={false} />
-                    <div className="overlay">
-                      <p>{item.judul}</p>
-                      <span>Date : {item.date}</span>
-                    </div>
+            <div className="flex w-max" ref={carouselRef}>
+              {[...Cards, ...Cards].map((item, index) => (
+                <div
+                  key={index}
+                  className="
+                  relative 
+                  shrink-0 
+                  mr-[30px] 
+                  group">
+
+                  <img
+                    src={item.gambar}
+                    alt={`gambar${index + 1}`}
+                    draggable={false}
+                    className="
+                    mt-[50px] md:mt-0
+
+                    w-[230px] md:w-[280px] lg:w-[320px]
+                    rounded-[20px]
+                    object-cover block
+
+                    transition duration-300
+                    group-hover:filter
+                    group-hover:blur-sm
+                    group-hover:brightness-[0.6]"/>
+                  
+                  {/* Overlay */}
+                  <div className="
+                    absolute 
+                    text-white 
+                    font-bold 
+                    text-[12px] 
+                    top-[82%] 
+                    left-0 
+                    z-[1] 
+                    mx-[7%] 
+                    hidden 
+                    group-hover:block">
+
+                    <p>{item.judul}</p>
+                    <span className="
+                      block 
+                      text-[9px] 
+                      font-light">
+
+                      Date : {item.date}
+                    </span>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
         {/* Carousel Section */}
