@@ -20,7 +20,7 @@ function Halaman5() {
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.3, // 0.3 artinya 30% bagian elemen terlihat baru dianggap muncul
+        threshold: 0.3, // 30% bagian elemen terlihat baru dianggap muncul
       }
     );
   
