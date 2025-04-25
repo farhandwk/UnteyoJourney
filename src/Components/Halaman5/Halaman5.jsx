@@ -54,7 +54,6 @@ function Halaman5() {
       animationFrameId = requestAnimationFrame(autoScroll);
     };
     
-    // Tambahkan delay 500ms sebelum mulai auto scroll
     timeoutId = setTimeout(() => {
       autoScroll();
     }, 1000);
