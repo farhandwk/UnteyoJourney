@@ -4,21 +4,52 @@
 .spray1Decor {
     background: -webkit-radial-gradient(circle at 50% 50%, rgba(255, 165, 0, 1) 20%, rgba(255, 69, 0, 1) 80%);
     background: radial-gradient(circle at 50% 50%, rgba(255, 165, 0, 1) 20%, rgba(255, 69, 0, 1) 80%);
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: -20vh;
+    left: 90vw;
+    filter: blur(90px);
+    border-radius: 5vw;
 }
 
 .spray2Decor {
     background: -webkit-radial-gradient( circle at 40% 55%, rgba(255, 255, 255, 1) 25%, rgba(67, 67, 240, 0.8) 80%);
     background: radial-gradient( circle at 40% 55%, rgba(255, 255, 255, 1) 25%, rgba(0, 0, 255, 0.8) 80%);
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 80vh;
+    left: -5vw;
+    filter: blur(70px);
+    border-radius: 10vw;
+    z-index: 0;
 }
 
 .spray2-2Decor {
     background: -webkit-radial-gradient( circle at 60% 70%, rgba(255, 255, 255, 1) 20%, rgba(255, 69, 0, 1) 80%);
     background: radial-gradient( circle at 60% 70%, rgba(255, 255, 255, 1) 20%, rgba(255, 69, 0, 1) 80%);
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 80vh;
+    left: -5vw;
+    filter: blur(70px);
+    border-radius: 10vw;
+    z-index: 0;
 }
 
 
 .spray3Decor {
     background: radial-gradient( circle at 50% 50%, rgba(255, 69, 0, 1) 40%, rgba(255, 165, 0, 1) 60%);
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 130vh;
+    right: -7vw;
+    filter: blur(70px);
+    border-radius: 200px;
+    z-index: 1;
 }
 
 @keyframes bounce {
@@ -45,3 +76,41 @@
     animation: bounce 1.5s ease-in-out infinite;
 }
 
+
+/* Untuk HP / layar kecil */
+@media (max-width: 758px) {
+    .spray3Decor {
+      width: 150px;
+      height: 150px;
+      top: 140vh;
+      right: -10vw;
+      filter: blur(50px);
+      border-radius: 150px;
+    }
+
+    .spray1Decor {
+        width: 200px;
+        height: 200px;
+        top: -10vh;
+        left: 70vw;
+        filter: blur(60px);
+        border-radius: 10vw;
+      }
+    
+      .spray2Decor {
+        width: 150px;
+        height: 250px;
+        top: 85vh;
+        left: -15vw;
+        filter: blur(50px);
+        border-radius: 15vw;
+      }
+      .spray2-2Decor {
+        width: 150px;
+        height: 250px;
+        top: 85vh;
+        left: -15vw;
+        filter: blur(50px);
+        border-radius: 15vw;
+      }
+}

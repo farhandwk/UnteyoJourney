@@ -33,12 +33,7 @@ function Decor() {
       <div
         className="
           spray1Decor
-          absolute
-          w-[25vw] h-[25vw]
-          top-[-10vh]
-          left-[30vw]
-          blur-[7vw]
-          rounded-[5vw]
+          
         "
       ></div>
       
@@ -47,36 +42,21 @@ function Decor() {
       <div
         className="
           spray2Decor
-          absolute
-          w-[20vw] h-[30vw]
-          top-[70vh] left-[-10vw]
-          blur-[6vw]
-          rounded-[10vw]
-          z-0
+          
         "
       ></div>
       
       <div
         className="
           spray2-2Decor
-          absolute
-          w-[20vw] h-[30vw]
-          top-[70vh] left-[-12vw]
-          blur-[6vw]
-          rounded-[10vw]
-          z-0
+          
         "
       ></div>
       
       <div
         className="
           spray3Decor
-          absolute
-          w-[22vw] h-[22vw]
-          top-[100vh] right-[-5vw]
-          blur-[7vw]
-          rounded-full
-          z-1
+       
         "
       ></div>
     
