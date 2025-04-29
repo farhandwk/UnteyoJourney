@@ -83,6 +83,7 @@ function Halaman5() {
           e.preventDefault();
           const dx = e.pageX - startX.current;
           container.scrollLeft = dragStartScroll.current - dx;
+          scrollPos.current = container.scrollLeft;
       };
 
       const endDrag = () => {
