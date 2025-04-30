@@ -76,9 +76,46 @@
     animation: bounce 1.5s ease-in-out infinite;
 }
 
+/* Untuk HP / layar kecil */
+@media (max-width: 768px) {
+    .spray3Decor {
+      width: 150px;
+      height: 150px;
+      top: 230vh;
+      right: -10vw;
+      filter: blur(50px);
+      border-radius: 150px;
+    }
+
+    .spray1Decor {
+        width: 200px;
+        height: 200px;
+        top: -20vh;
+        left: 85vw;
+        filter: blur(60px);
+        border-radius: 10vw;
+      }
+    
+      .spray2Decor {
+        width: 150px;
+        height: 250px;
+        top: 85vh;
+        left: -10vw;
+        filter: blur(50px);
+        border-radius: 15vw;
+      }
+      .spray2-2Decor {
+        width: 150px;
+        height: 250px;
+        top: 85vh;
+        left: -10vw;
+        filter: blur(50px);
+        border-radius: 15vw;
+      }
+}
 
 /* Untuk HP / layar kecil */
-@media (max-width: 758px) {
+@media (max-width: 480px) {
     .spray3Decor {
       width: 150px;
       height: 150px;
@@ -101,7 +138,7 @@
         width: 150px;
         height: 250px;
         top: 85vh;
-        left: -15vw;
+        left: -20vw;
         filter: blur(50px);
         border-radius: 15vw;
       }
@@ -109,7 +146,7 @@
         width: 150px;
         height: 250px;
         top: 85vh;
-        left: -15vw;
+        left: -20vw;
         filter: blur(50px);
         border-radius: 15vw;
       }
