@@ -12,13 +12,8 @@
     background: none;
     overflow: hidden;
     backdrop-filter: blur(100px);
-}
-
-/* Responsive adjustments */
-@media (min-width: 768px) {
-    .containerHal5 {
-        height: 100vh;
-        width: 100vw;
-        overflow: hidden;
-    }
+    overflow-x: hidden;
+    overflow-y: hidden;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: auto;
 }

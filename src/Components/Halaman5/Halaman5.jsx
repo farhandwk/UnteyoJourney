@@ -42,7 +42,7 @@ function Halaman5() {
   
     const autoScroll = () => {
       if (isVisible && !isHovered && !isDragging.current && containerRef.current && carouselRef.current) {
-        scrollPos.current += 1;
+        scrollPos.current += 0.5;
         const maxScroll = carouselRef.current.scrollWidth / 2;
   
         if (scrollPos.current >= maxScroll) {
@@ -98,11 +98,27 @@ function Halaman5() {
       container.addEventListener("pointerleave", endDrag);        
 
       return () => {
-          container.addEventListener("pointerdown", onMouseDown);
-          container.addEventListener("pointermove", onMouseMove);
-          container.addEventListener("pointerup", endDrag);
-          container.addEventListener("pointerleave", endDrag);            
+        container.removeEventListener("pointerdown", onMouseDown);
+        container.removeEventListener("pointermove", onMouseMove);
+        container.removeEventListener("pointerup", endDrag);
+        container.removeEventListener("pointerleave", endDrag);           
       };
+  }, []);
+
+  //Menonaktifkan long press pada perangkat mobile
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const disableLongPress = (e) => {
+      e.preventDefault();
+    };
+
+    container.addEventListener("touchstart", disableLongPress);
+
+    return () => {
+      container.removeEventListener("touchstart", disableLongPress);
+    };
   }, []);
 
   return (
@@ -116,7 +132,12 @@ function Halaman5() {
         <h2 className="
           HelveticaBold 
           text-[white] 
-          text-[25px] mt-[100px] lg:text-[40px]">
+          text-[25px] 
+          mt-[100px]
+          lg:mt-[120px] 
+          md:text-[35px]
+          lg:text-[40px]
+          ">
 
           Past Events
         </h2>
@@ -126,14 +147,15 @@ function Halaman5() {
           flex 
           flex-row 
           w-[80%]
-          h-[550px] 
+          h-[350px] sm:h-[550px]
+          mb-20 sm:mb-1
           justify-center 
-          items-center 
+          items-center
           mx-auto">
 
           <div className="
             w-full 
-            overflow-hidden 
+            overflow-hidden
             relative 
             max-w-[1375px]"
             
