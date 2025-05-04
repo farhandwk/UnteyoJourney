@@ -6,7 +6,7 @@ import "./Decor.css";
 
 function Decor() {
   return (
-    <div className="absolute w-full h-[300%] overflow-hidden z-[1] left-0 top-0">
+    <div className="absolute w-full h-[300%] overflow-hidden z-[1] left-0 top-0 overflow-x-hidden">
       
       <img
         className="

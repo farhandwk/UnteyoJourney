@@ -62,7 +62,7 @@ function AboutDeveloper() {
             <li key={index}
             className={`
                 bg-[#fefefe]
-                w-[200px] h-[300px] rounded-[10px]
+                w-[200px] h-[350px] rounded-[10px]
                 flex flex-col justify-center items-center m-[20px]
                 ${index === 0 ? 'self-start' : 'self-end'}
 

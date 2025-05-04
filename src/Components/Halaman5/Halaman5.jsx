@@ -190,27 +190,38 @@ function Halaman5() {
                     group-hover:brightness-[0.6]"/>
                   
                   {/* Overlay */}
-                  <div className="
-                    absolute 
+                 <div className='
+                 block opacity-[0%] group-hover:opacity-[100%]
+                 z-[1]  relative top-[-100px] left-[0] max-w-[250px]
+                 '>
+                 <div className="
+                    Helvetica
+                    relative 
                     text-white 
                     font-bold 
                     text-[12px] 
-                    top-[82%] 
-                    left-0 
                     z-[1] 
                     mx-[7%] 
-                    hidden 
-                    group-hover:block">
+                    bg-[none]
+                    flex flex-col justify-between p-[0.5%] gap-[15px]
+                    ">
 
-                    <p>{item.judul}</p>
-                    <span className="
+                    <p className='HelveticaBold text-[12px]'>{item.judul}</p>
+                   <div className='Helvetica flex flex-row'>
+                   <span className="
                       block 
-                      text-[9px] 
-                      font-light">
+                      text-[9px]">
 
                       Date : {item.date}
                     </span>
+                    <span className="
+                      block 
+                      text-[9px] ">
+                      Location : {item.loc}
+                    </span>
+                   </div>
                   </div>
+                 </div>
                 </div>
               ))}
             </div>
