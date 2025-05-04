@@ -4,6 +4,7 @@ import anggotabaru from "../../assets/anggotabaru.png";
 import Terai from "../../assets/LogoTerai.png";
 import Hubungins from "../../assets/LogoHubung'ins.png";
 import Perspektif from "../../assets/LogoPerspektif.png";
+import "../font.css"
 
 function Halaman6() {
   const containerVariants = {
@@ -78,7 +79,7 @@ function Halaman6() {
               <img
                 src={Hubungins}
                 alt="Hubungins"
-                className="w-24 mx-auto grayscale hover:grayscale-0 active:grayscale-0 transition-all duration-300"
+                className="w-24 mx-auto grayscale hover:grayscale-0 active:grayscale-0 focus:grayscale-0 transition-all duration-300"
               />
             </motion.div>
 
@@ -90,12 +91,12 @@ function Halaman6() {
                 <img
                   src={Terai}
                   alt="Terai"
-                  className="w-24 grayscale hover:grayscale-0 active:grayscale-0  transition-all duration-300"
+                  className="w-24 grayscale hover:grayscale-0 active:grayscale-0 focus:grayscale-0 transition-all duration-300"
                 />
                 <img
                   src={Perspektif}
                   alt="Perspektif"
-                  className="w-24 grayscale hover:grayscale-0 active:grayscale-0 transition-all duration-300"
+                  className="perspektif brightness-50 w-24 grayscale hover:grayscale-0 hover:brightness-100 active:grayscale-0 active:brightness-100 focus:grayscale-0 focus:brightness-100 transition-all duration-300"
                 />
               </div>
             </motion.div>
