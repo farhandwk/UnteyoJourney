@@ -192,7 +192,7 @@ function Halaman5() {
                   {/* Overlay */}
                  <div className='
                  block opacity-[0%] group-hover:opacity-[100%]
-                 z-[1]  relative top-[-100px] left-[0] max-w-[250px]
+                 z-[1]  relative top-[-100px] left-[0] max-w-[250px] hidden
                  '>
                  <div className="
                     Helvetica

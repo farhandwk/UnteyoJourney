@@ -3,6 +3,8 @@ import TaketheTrash from "../../assets/Events/takethetrash.png"
 import Pilmapres from "../../assets/Events/pilmapres.png"
 import PersonalBranding from "../../assets/Events/personalbranding.png"
 import GaleryofLife from "../../assets/Events/galeryoflife.png"
+import TaketheLead from "../../assets/Events/takethelead.png"
+import SolveThePuzzle from "../../assets/Events/solvethepuzzle.png"
 
 const Cards = [
     {
@@ -43,6 +45,22 @@ const Cards = [
         judul : "Galery of Life: Ekspresi Dari Melukis",
         date : "JAN 17 2025",
         loc : "Taman Kampus 1 UTY",
+        link : "asada"
+    },
+    {
+        id: 6,
+        gambar : TaketheLead,
+        judul : "Take the Lead: Upgrade Skill, Karir, dan Bisnismu dengan Skill Kepemimpinan",
+        date : "FEB 24 2025",
+        loc : "Zoom Meeting",
+        link : "asada"
+    },
+    {
+        id: 7,
+        gambar : SolveThePuzzle,
+        judul : "Solve The Puzzle: Mengungkap Misteri",
+        date : "MAR 15 2025",
+        loc : "UTY Creative Hub",
         link : "asada"
     },
 ]

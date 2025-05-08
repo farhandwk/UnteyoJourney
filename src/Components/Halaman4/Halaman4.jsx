@@ -1,6 +1,6 @@
 import React from "react";
 import logo2 from "../../assets/logo2.png";
-import GaleryofLife from "../../assets/Events/galeryoflife.png";
+import GaleryofLife from "../../assets/Events/EmpowHERment.png";
 
 function Halaman4() {
   return (
@@ -113,7 +113,7 @@ function Halaman4() {
                   lg:text-[24px]
                   "
               >
-                Galery of Life: Ekspresi Dari Melukis
+                Sharing EmpowHERment: Perempuan, Mimpi, dan Perjuangan
               </h3>
               <div
                 className="
@@ -144,7 +144,7 @@ function Halaman4() {
                       lg:text-[16px]
                       "
                 >
-                  JAN 10 2025
+                  MAY 03 2025
                 </p>
                 <h4
                   className="
@@ -164,7 +164,7 @@ function Halaman4() {
                       lg:text-[16px]
                       "
                 >
-                  Taman Kampus 1 UTY
+                  Ruang Sidang HI, UTY Kampus 1, G33
                 </p>
               </div>
               <div
@@ -177,7 +177,8 @@ function Halaman4() {
                   lg:gap-[25px]
                   "
               >
-                <button
+               <a href="https://wa.me/+6285157576316?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Anda" target="_blank">
+               <button
                   className="
                       w-[100px]
                       border-[2px] border-white
@@ -194,6 +195,8 @@ function Halaman4() {
                 >
                   More Info
                 </button>
+               </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeiSANiPV83IuPcFs1wV5LnrmWObCrqiRDTlBGAwyrOXNiWIw/viewform" target="_blank">
                 <button
                   className="
                       w-[100px]
@@ -211,6 +214,7 @@ function Halaman4() {
                 >
                   Buy Now
                 </button>
+                </a>
               </div>
               <p
                 className="
@@ -222,7 +226,7 @@ function Halaman4() {
                   lg:mt-[25px]
                   "
               >
-                "Ekspresikan Kreativitasmu di Gelary of Life"
+                "Perempuan, Mimpi, dan Perjuangan"
               </p>
             </div>
           </section>

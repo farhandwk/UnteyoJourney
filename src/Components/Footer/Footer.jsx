@@ -9,9 +9,9 @@ function Footer() {
   const [openSection, setOpenSection] = useState(null);
 
   const contacts = [
-    { gambar: instagram, link: "https://instagram.com", name: "Instagram" },
-    { gambar: tiktok, link: "https://tiktok.com", name: "TikTok" },
-    { gambar: youtube, link: "https://youtube.com", name: "YouTube" },
+    { gambar: instagram, link: "https://www.instagram.com/unteyojourney?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", name: "Instagram" },
+    { gambar: tiktok, link: "https://www.tiktok.com/@unteyo.journey?_t=ZS-8w65xIKnw9v&_r=1", name: "TikTok" },
+    { gambar: youtube, link: "#Youtube", name: "YouTube" },
   ];
 
   const footerSections = [
