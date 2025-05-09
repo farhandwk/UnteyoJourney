@@ -37,6 +37,7 @@ function Landing({scrollToSection}) {
       >
         <h1
           className="
+            judulLanding
             HelveticaBold
             text-[40px]
             mt-[250px]

@@ -12,12 +12,12 @@ function Decor() {
         className="
           like
           absolute
-          w-[15vw]
+          w-[60px]
           left-[8vw] top-[30vh]
 
-          md:w-[8vw] 
+          md:w-[80px] 
           md:top-[37vh]
-          lg:w-[8vw]
+          lg:w-[100px]
           lg:top-[37vh]
         "
         src={like}
@@ -28,13 +28,13 @@ function Decor() {
         className="
           love
           absolute
-          w-[15vw]
+          w-[60px]
           left-[80vw] top-[60vh]
 
-          md:w-[9vw]
+          md:w-[80px]
           md:top-[60vh]
           
-          lg:w-[9wv]
+          lg:w-[100px]
           lg:top-[60vh]
         "
         src={love}

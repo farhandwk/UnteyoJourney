@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import logo from "../../assets/logo.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import hamburger from "../../assets/lineicons_menu-cheesburger.png"
 import "./Header.css"
 
 function Header({scrollToSection}) {
@@ -40,6 +39,9 @@ function Header({scrollToSection}) {
     
 
     md:h-[120px]
+    md:pt-[30px]
+    md:pl-[30px]
+    md:pr-[30px]
 
     lg:flex-row-reverse
     lg:h-[120px]

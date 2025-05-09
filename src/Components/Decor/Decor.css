@@ -151,3 +151,28 @@
         border-radius: 15vw;
       }
 }
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+  .spray1Decor {
+    top: clamp(-150px, -28vh, -200px);
+    left: clamp(700px, 85vw, 1000px)
+  }
+
+  .spray2Decor {
+    top: clamp(900px, 75vh, 1200px);
+    width: clamp(200px, 30vw, 300px);
+    left: clamp(-110px, -15vw, -200px);
+    height: clamp(300px, 30vw, 400px);
+  }
+
+  .spray2-2Decor {
+    top: clamp(900px, 75vh, 1200px);
+    width: clamp(200px, 30vw, 300px);
+    left: clamp(-110px, -15vw, -200px);
+    height: clamp(300px, 30vw, 400px);
+  }
+
+  .spray3Decor {
+    
+  }
+}

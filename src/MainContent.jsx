@@ -30,7 +30,7 @@ function MainContent() {
       <Halaman4></Halaman4>
       <Halaman5></Halaman5>
       <Halaman6></Halaman6>
-      <Footer></Footer>
+      <Footer scrollToSection={scrollToSection}></Footer>
     </div>
   )
 }

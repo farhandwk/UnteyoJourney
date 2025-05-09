@@ -192,7 +192,7 @@ function Halaman5() {
                   {/* Overlay */}
                  <div className='
                  block opacity-[0%] group-hover:opacity-[100%]
-                 z-[1]  relative top-[-100px] left-[0] max-w-[250px] hidden
+                 z-[1]  relative top-[-100px] left-[0] max-w-[250px] 
                  '>
                  <div className="
                     Helvetica
@@ -207,7 +207,7 @@ function Halaman5() {
                     ">
 
                     <p className='HelveticaBold text-[12px]'>{item.judul}</p>
-                   <div className='Helvetica flex flex-row'>
+                   <div className='Helvetica flex flex-row gap-[20px]'>
                    <span className="
                       block 
                       text-[9px]">
