@@ -32,7 +32,6 @@ function Decor() {
           left-[80vw] top-[60vh]
 
           md:w-[80px]
-          md:top-[60vh]
           
           lg:w-[100px]
           lg:top-[60vh]

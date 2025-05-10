@@ -127,7 +127,11 @@ function Halaman5() {
         containerHal5 
         flex 
         flex-col 
-        items-center">
+        items-center
+        md:h-screen 
+        md:max-h-screen 
+        md:overflow-hidden
+        ">
 
         <h2 className="
           HelveticaBold 

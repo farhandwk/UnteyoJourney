@@ -10,7 +10,9 @@ function Halaman1() {
     w-full h-full
     flex justify-center items-center flex-col
     relative 
-    md:flex-row md:p-[100px] md:pt-[50px]
+    md:flex-row md:p-[100px] md:h-screen 
+        md:max-h-screen 
+        md:overflow-hidden
     lg:p-[200px] lg:pt-[100px]
     "
     >
