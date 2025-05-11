@@ -43,7 +43,7 @@ function Footer({scrollToSection}) {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-[#000] to-[#16213e] text-white">
+    <footer id="connect" className="bg-gradient-to-br from-[#000] to-[#16213e] text-white">
       <div className="container mx-auto px-4 py-8">
         {/* Logo and Description - Always Visible */}
         <div className="text-center mb-6">
