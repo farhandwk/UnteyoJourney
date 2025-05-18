@@ -28,7 +28,8 @@ function Header({scrollToSection}) {
   return (
     <div className={`containerHeader ${isScrolled ? "scrolled" : ""}
     flex flex-row
-    w-full h-[100px]
+    overflow-hidden
+    w-screen h-[100px]
     justify-between
     pt-[20px]
     pl-[20px]

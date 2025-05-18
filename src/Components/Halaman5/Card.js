@@ -5,6 +5,7 @@ import PersonalBranding from "../../assets/Events/personalbranding.png"
 import GaleryofLife from "../../assets/Events/galeryoflife.png"
 import TaketheLead from "../../assets/Events/takethelead.png"
 import SolveThePuzzle from "../../assets/Events/solvethepuzzle.png"
+import Empowherment from "../../assets/Events/EmpowHERment.png"
 
 const Cards = [
     {
@@ -62,6 +63,14 @@ const Cards = [
         date : "MAR 15 2025",
         loc : "UTY Creative Hub",
         link : "asada"
+    },
+    {
+        id: 8,
+        gambar: Empowherment,
+        judul: "Sharing EmpowHERment: Perempuan, Mimpi, dan Perjuangan",
+        date : "MAY 3 2025",
+        loc: "Ruang Sidang HI, Kampus 1 UTY, Ruang G33",
+        link: "asd"
     },
 ]
 

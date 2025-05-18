@@ -87,7 +87,7 @@ function Halaman6() {
               <h3 className="text-xl font-semibold text-white mb-4">
                 Partner Us:
               </h3>
-              <div className="flex space-x-6 justify-center">
+              <div className="flex space-x-6 justify-center items-center">
                 <img
                   src={Terai}
                   alt="Terai"
@@ -96,7 +96,7 @@ function Halaman6() {
                 <img
                   src={Perspektif}
                   alt="Perspektif"
-                  className="perspektif brightness-50 w-24 grayscale hover:grayscale-0 hover:brightness-100 active:grayscale-0 active:brightness-100 focus:grayscale-0 focus:brightness-100 transition-all duration-300"
+                  className="perspektif brightness-50 w-24 h-9 grayscale hover:grayscale-0 hover:brightness-100 active:grayscale-0 active:brightness-100 focus:grayscale-0 focus:brightness-100 transition-all duration-300"
                 />
               </div>
             </motion.div>

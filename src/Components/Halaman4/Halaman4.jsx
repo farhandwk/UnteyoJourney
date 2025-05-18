@@ -1,6 +1,6 @@
 import React from "react";
 import logo2 from "../../assets/logo2.png";
-import GaleryofLife from "../../assets/Events/EmpowHERment.png";
+import GerakRupa from "../../assets/Events/gerakrupa.jpg"
 
 function Halaman4() {
   return (
@@ -62,7 +62,7 @@ function Halaman4() {
           "
         >
           <img
-            src={GaleryofLife}
+            src={GerakRupa}
             alt="Galery of Life Event"
             className="
             w-[230px]
@@ -112,7 +112,7 @@ function Halaman4() {
                   lg:text-[24px]
                   "
               >
-                Sharing EmpowHERment: Perempuan, Mimpi, dan Perjuangan
+                GerakRupa: Mengukir Kreativitas dalam Bingkai Budaya Lokal
               </h3>
               <div
                 className="
@@ -143,7 +143,7 @@ function Halaman4() {
                       lg:text-[16px]
                       "
                 >
-                  MAY 03 2025
+                  MAY 05 2025
                 </p>
                 <h4
                   className="
@@ -163,7 +163,7 @@ function Halaman4() {
                       lg:text-[16px]
                       "
                 >
-                  Ruang Sidang HI, UTY Kampus 1, G33
+                  Rumah Gerabah, Taman Pintar Yogyakarta
                 </p>
               </div>
               <div
@@ -195,7 +195,7 @@ function Halaman4() {
                   More Info
                 </button>
                </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeiSANiPV83IuPcFs1wV5LnrmWObCrqiRDTlBGAwyrOXNiWIw/viewform" target="_blank">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdB2pXiKtb4gsWCepSePFo_w6uPOzPr0OdtuRvKGrd366CBmg/viewform" target="_blank">
                 <button
                   className="
                       w-[100px]
@@ -211,11 +211,11 @@ function Halaman4() {
                       lg:rounded-[8px]
                       "
                 >
-                  Buy Now
+                  Register Now
                 </button>
                 </a>
               </div>
-              <p
+              {/* <p
                 className="
                   HelveticaBold
                   text-[15px]
@@ -226,7 +226,7 @@ function Halaman4() {
                   "
               >
                 "Perempuan, Mimpi, dan Perjuangan"
-              </p>
+              </p> */}
             </div>
           </section>
         </div>
