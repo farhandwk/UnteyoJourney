@@ -12,7 +12,7 @@ function Decor() {
         className="
           like
           absolute
-          w-[60px]
+          w-[55px]
           left-[8vw] top-[30vh]
 
           md:w-[80px] 

@@ -8,11 +8,10 @@ function Landing({scrollToSection}) {
       className="
         bg-none
         text-white
-        w-full 
-        min-h-screen 
-        md:h-screen 
-        md:max-h-screen 
-        md:overflow-hidden 
+        w-full
+        min-h-screen
+        md:min-h-[50vh]
+        lg:min-h-screen 
         flex flex-col
         items-center
         justify-center
@@ -21,7 +20,7 @@ function Landing({scrollToSection}) {
         md:px-4
         lg:px-[0]
       "
-    >
+        >
       <div 
         className="
           w-full 
