@@ -10,7 +10,9 @@ function Landing({scrollToSection}) {
         text-white
         w-full
         min-h-screen
-        md:min-h-[50vh]
+        mt-[0]
+        md:min-h-[30vh]
+        md:mt-[10vh]
         lg:min-h-screen 
         flex flex-col
         items-center
@@ -19,6 +21,7 @@ function Landing({scrollToSection}) {
         relative
         md:px-4
         lg:px-[0]
+        lg:mt-[0]
       "
         >
       <div 

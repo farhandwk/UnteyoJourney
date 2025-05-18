@@ -16,7 +16,6 @@ function Decor() {
           left-[8vw] top-[30vh]
 
           md:w-[80px] 
-          md:top-[37vh]
           lg:w-[100px]
           lg:top-[37vh]
         "

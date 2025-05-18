@@ -20,7 +20,7 @@ function MainContent() {
         }
       };
   return (
-    <div className="bg-[black]">
+    <div>
         <Header scrollToSection={scrollToSection}></Header>
       <Landing scrollToSection={scrollToSection}></Landing>
       <Decor></Decor>

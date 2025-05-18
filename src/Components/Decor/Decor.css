@@ -159,21 +159,21 @@
   }
 
   .spray2Decor {
-    top: clamp(1500px, 130vh, 3300px);
+    top: clamp(350px, 40vh, 800px);
     width: clamp(200px, 30vw, 300px);
     left: clamp(-110px, -15vw, -200px);
     height: clamp(300px, 30vw, 400px);
   }
 
   .spray2-2Decor {
-    top: clamp(1500px, 130vh, 3300px);
+    top: clamp(350px, 40vh, 800px);
     width: clamp(200px, 30vw, 300px);
     left: clamp(-110px, -15vw, -200px);
     height: clamp(300px, 30vw, 400px);
   }
 
   .spray3Decor {
-    top: clamp(1400px, 140vh, 3300px);
+    top: clamp(700px, 50vh, 1000px);
     width: clamp(300px, 40vw, 350px);
     height: clamp(300px, 40vw, 350px);
     filter: blur(90px);
@@ -181,7 +181,7 @@
   }
 
   .like {
-    top: clamp(100px, 10vh, 200px);
+    top: clamp(150px, 10vh, 250px);
   }
   
   .love {

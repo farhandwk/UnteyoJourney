@@ -19,8 +19,7 @@ function Halaman2() {
       justify-center
       items-center
       pt-[128px]
-      md:p-[100px] md:h-screen 
-        md:max-h-screen 
+      md:p-[100px] 
         md:overflow-hidden
       lg:pt-[120px]
       "

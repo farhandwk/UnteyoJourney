@@ -28,7 +28,7 @@ function Halaman6() {
   };
 
   return (
-    <div className="relative min-h-screen py-16 overflow-hidden">
+    <div className="relative min-h-screen md:min-h-[0] lg:min-h-screen py-16 overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial="hidden"

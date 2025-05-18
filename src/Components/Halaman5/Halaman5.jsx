@@ -128,8 +128,6 @@ function Halaman5() {
         flex 
         flex-col 
         items-center
-        md:h-screen 
-        md:max-h-screen 
         md:overflow-hidden
         ">
 

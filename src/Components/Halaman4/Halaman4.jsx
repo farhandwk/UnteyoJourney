@@ -10,16 +10,15 @@ function Halaman4() {
         w-full 
         min-h-screen 
         mb-[20px]
-        md:h-screen 
-        md:max-h-screen 
-        md:overflow-hidden
+        md:overflow-hidde 
+        md:min-h-[50vh]
         md:mb-[0] 
         flex flex-col
         justify-center 
         items-center
         relative
 
-        lg:pt-[100px]
+        lg:pt-[100px] lg:min-h-screen
       "
     >
       <div 
