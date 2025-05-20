@@ -143,7 +143,7 @@ function Halaman4() {
                       lg:text-[16px]
                       "
                 >
-                  MAY 05 2025
+                  MAY 25 2025
                 </p>
                 <h4
                   className="
