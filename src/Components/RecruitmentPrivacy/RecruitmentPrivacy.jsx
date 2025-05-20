@@ -4,7 +4,7 @@ import AccordionItem from "../AccordionItem";
 
 const RecruitmentPrivacy = () => {
   return (
-    <div className="bg-white text-black container mx-auto px-4 py-8 max-w-3xl min-h-screen">
+    <div className="min-w-screen bg-white text-black container mx-auto px-8 lg:px-32 py-8 max-w-3xl min-h-screen">
       <h1 className="HelveticaBold text-3xl font-bold mb-6 border-b pb-2">
         Recruitment Privacy (Privasi Rekrutmen)
       </h1>

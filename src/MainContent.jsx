@@ -20,7 +20,7 @@ function MainContent() {
         }
       };
   return (
-    <div>
+    <div className="overflow-hidden">
         <Header scrollToSection={scrollToSection}></Header>
       <Landing scrollToSection={scrollToSection}></Landing>
       <Decor></Decor>

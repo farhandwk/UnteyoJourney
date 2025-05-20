@@ -28,7 +28,6 @@ function Header({scrollToSection}) {
   return (
     <div className={`containerHeader ${isScrolled ? "scrolled" : ""}
     flex flex-row
-    overflow-hidden
     w-screen h-[100px]
     justify-between
     pt-[20px]
@@ -98,8 +97,10 @@ function Header({scrollToSection}) {
         <div 
         className={`Navbar ${isActive ? 'active' : ''} absolute
         top-[0px] left-[0px]
-        flex flex-col lg:hidden`}>
+        flex flex-col lg:hidden
+        z-50`}>
             <ul class="
+            NavbarMobile
             HelveticaBold
             text-[black] text-[18px]
             w-screen
