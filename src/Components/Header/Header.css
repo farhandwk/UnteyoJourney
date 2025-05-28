@@ -1,6 +1,7 @@
 .Navbar {
-    transition: 0.5s;
     transform: translateY(-100%);
+    transition: 0.5s;
+
 }
 
 .active {
