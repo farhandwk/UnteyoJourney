@@ -49,7 +49,7 @@ function Halaman4() {
         >
           Upcoming Event
         </h2>
-        <div
+        {/* <div
           className="
           w-full
           flex flex-col
@@ -214,7 +214,7 @@ function Halaman4() {
                   Register Now
                 </button>
                 </a>
-              </div>
+              </div> */}
               {/* <p
                 className="
                   HelveticaBold
@@ -226,10 +226,56 @@ function Halaman4() {
                   "
               >
                 "Perempuan, Mimpi, dan Perjuangan"
-              </p> */}
-            </div>
+              </p> 
+            </div> 
+          </section>
+        </div> */}
+
+        <div
+          className="
+          w-full
+          flex flex-col
+          items-center justify-center
+          md:flex-row-reverse
+          md:gap-[50px]
+          lg:flex-row-reverse
+          lg:gap-[100px]
+          lg:mt-[50px]
+          "
+        >
+          <section
+            className="
+            w-[320px] h-auto
+            border-[3px] border-white
+            rounded-[10px]
+            mt-[40px]
+            md:mt-0
+            flex flex-row
+            items-center justify-center
+            p-[10px]
+            gap-[20px]
+            md:w-[400px]
+            md:p-[15px]
+            lg:w-[480px] 
+            lg:p-[20px]
+            lg:gap-[30px]
+            "
+          >
+            <h3
+                className="
+                  HelveticaBold
+                  text-[18px]
+                  md:text-[22px]
+                  lg:text-[24px]
+                  text-white
+                  "
+              >
+                Stay Tune!
+              </h3>
+
           </section>
         </div>
+
       </div>
     </div>
   );
