@@ -20,7 +20,7 @@ function Footer({scrollToSection}) {
       items: [
         { name: "About Us", link: "aboutUs" },
         { name: "Program", link: "program" },
-        { name: "News", link: "post" },
+
         { name: "Contact Us", link: "connect" },
       ],
     },
