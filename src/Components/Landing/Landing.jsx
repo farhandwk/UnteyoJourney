@@ -8,11 +8,12 @@ function Landing({scrollToSection}) {
       className="
         bg-none
         text-white
-        w-full 
-        min-h-screen 
-        md:h-screen 
-        md:max-h-screen 
-        md:overflow-hidden 
+        w-full
+        min-h-screen
+        mt-[0]
+        md:min-h-[30vh]
+        md:mt-[10vh]
+        lg:min-h-screen 
         flex flex-col
         items-center
         justify-center
@@ -20,8 +21,9 @@ function Landing({scrollToSection}) {
         relative
         md:px-4
         lg:px-[0]
+        lg:mt-[0]
       "
-    >
+        >
       <div 
         className="
           w-full 
@@ -37,6 +39,7 @@ function Landing({scrollToSection}) {
       >
         <h1
           className="
+            judulLanding
             HelveticaBold
             text-[40px]
             mt-[250px]

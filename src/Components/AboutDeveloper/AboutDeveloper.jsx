@@ -13,7 +13,7 @@ function AboutDeveloper() {
             Whatsapp: "https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=raafkieducation@@gmail.com",
             Instagram: "https://www.instagram.com/rsfakiii/",
             Linkedin: "https://www.linkedin.com/in/muhammad-raafky-1753b3285/",
-            text: "Freelance Fullstack Developer and Data Analyst with a passion for expanding practical experience while delivering impactful solutions in a dynamic work environmen",
+            text: "Freelance Fullstack Developer and Data Analyst with a passion for expanding practical experience while delivering impactful solutions in a dynamic work environment.",
         },
         {
             nama: "Farhan Dwiki Ardhani",
@@ -21,7 +21,7 @@ function AboutDeveloper() {
             Whatsapp: "https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=farhandwiki15@gmail.com",
             Instagram: "https://www.instagram.com/farhan_dwiar/",
             Linkedin: "https://www.linkedin.com/in/farhanardhani/",
-            text: "Freelance Fullstack Developer and Data Analyst that looking for experience and making contribution",
+            text: "Freelance Fullstack Developer & Data Analyst Committed to continuous learning and making contributions. Utilizing a research-driven approach and data analysis before making decisions.",
         }
     ]
 
@@ -62,11 +62,11 @@ function AboutDeveloper() {
             <li key={index}
             className={`
                 bg-[#fefefe]
-                w-[200px] h-[300px] rounded-[10px]
+                w-[200px] h-[350px] rounded-[10px]
                 flex flex-col justify-center items-center m-[20px]
                 ${index === 0 ? 'self-start' : 'self-end'}
 
-                md:w-[350px] md:h-[520px]
+                md:w-[350px] md:h-[550px]
                 md:gap-[10px]
                 `}
             >

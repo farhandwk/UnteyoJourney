@@ -20,7 +20,7 @@ function MainContent() {
         }
       };
   return (
-    <div className="bg-[black]">
+    <div className="overflow-hidden">
         <Header scrollToSection={scrollToSection}></Header>
       <Landing scrollToSection={scrollToSection}></Landing>
       <Decor></Decor>
@@ -30,7 +30,7 @@ function MainContent() {
       <Halaman4></Halaman4>
       <Halaman5></Halaman5>
       <Halaman6></Halaman6>
-      <Footer></Footer>
+      <Footer scrollToSection={scrollToSection}></Footer>
     </div>
   )
 }

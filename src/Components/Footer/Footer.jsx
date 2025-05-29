@@ -5,39 +5,45 @@ import instagram from "../../assets/instagram.png";
 import tiktok from "../../assets/tiktok.png";
 import youtube from "../../assets/youtube.png";
 
-function Footer() {
+function Footer({scrollToSection}) {
   const [openSection, setOpenSection] = useState(null);
 
   const contacts = [
-    { gambar: instagram, link: "https://instagram.com", name: "Instagram" },
-    { gambar: tiktok, link: "https://tiktok.com", name: "TikTok" },
-    { gambar: youtube, link: "https://youtube.com", name: "YouTube" },
+    { gambar: instagram, link: "https://www.instagram.com/unteyojourney?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", name: "Instagram" },
+    { gambar: tiktok, link: "https://www.tiktok.com/@unteyo.journey?_t=ZS-8w65xIKnw9v&_r=1", name: "TikTok" },
+    { gambar: youtube, link: "#Youtube", name: "YouTube" },
   ];
 
-  const footerSections = [
+  const footerSectionsCompany = [
     {
       title: "Company",
       items: [
-        { name: "About Us", link: "#about" },
-        { name: "Program", link: "#program" },
-        { name: "News", link: "#news" },
-        { name: "Contact Us", link: "#contact" },
-      ],
-    },
-    {
-      title: "Developer",
-      items: [
-        { name: "About Developer", link: "/#/AboutDeveloper" }
+        { name: "About Us", link: "aboutUs" },
+        { name: "Program", link: "program" },
+
+        { name: "Contact Us", link: "connect" },
       ],
     },
   ];
+
+  const footerSectionsUserGuide = [
+    {
+      title: "User Guide & Policies",
+      items: [
+        { name: "Privacy Policy", link: "/#/privacy" },
+        { name: "Terms and Condition", link: "/#/terms" },
+        { name: "Cookie Policy", link: "/#/cookies" },
+        { name: "Recruitment Privacy", link: "/#/recruitment" },
+      ],
+    },
+  ]
 
   const toggleSection = (title) => {
     setOpenSection(openSection === title ? null : title);
   };
 
   return (
-    <footer className="bg-gradient-to-br from-[#000] to-[#16213e] text-white">
+    <footer id="connect" className="bg-gradient-to-br from-[#000] to-[#16213e] text-white">
       <div className="container mx-auto px-4 py-8">
         {/* Logo and Description - Always Visible */}
         <div className="text-center mb-6">
@@ -54,7 +60,41 @@ function Footer() {
 
         {/* Mobile & Tablet Accordion Layout */}
         <div className="block md:hidden">
-          {footerSections.map((section, index) => (
+          {footerSectionsCompany.map((section, index) => (
+            <div key={index} className="border-b border-gray-700">
+              <button
+                onClick={() => toggleSection(section.title)}
+                className="w-full text-left py-4 flex justify-between items-center"
+              >
+                <span className="font-bold">{section.title}</span>
+                <span>{openSection === section.title ? "−" : "+"}</span>
+              </button>
+              <AnimatePresence>
+                {openSection === section.title && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <ul className="pb-4 space-y-2">
+                      {section.items.map((item, itemIndex) => (
+                        <li key={itemIndex}>
+                          <a
+                            className="text-sm text-gray-300 hover:text-white"
+                            onClick={() => scrollToSection(item.link)}
+                          >
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+          {footerSectionsUserGuide.map((section, index) => (
             <div key={index} className="border-b border-gray-700">
               <button
                 onClick={() => toggleSection(section.title)}
@@ -92,7 +132,24 @@ function Footer() {
 
         {/* Desktop Layout */}
         <div className="hidden md:grid grid-cols-3 gap-8 mb-8 md:ml-5 lg:ml-8">
-          {footerSections.map((section, index) => (
+          {footerSectionsCompany.map((section, index) => (
+            <div key={index}>
+              <h4 className="text-lg font-bold mb-4">{section.title}</h4>
+              <ul className="space-y-2">
+                {section.items.map((item, itemIndex) => (
+                  <li key={itemIndex}>
+                    <a
+                      className="text-sm text-gray-300 hover:text-white transition-colors cursor-pointer"
+                      onClick={() => scrollToSection(item.link)}
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          {footerSectionsUserGuide.map((section, index) => (
             <div key={index}>
               <h4 className="text-lg font-bold mb-4">{section.title}</h4>
               <ul className="space-y-2">
@@ -100,7 +157,7 @@ function Footer() {
                   <li key={itemIndex}>
                     <a
                       href={item.link}
-                      className="text-sm text-gray-300 hover:text-white transition-colors"
+                      className="text-sm text-gray-300 hover:text-white transition-colors cursor-pointer"
                     >
                       {item.name}
                     </a>
@@ -157,35 +214,17 @@ function Footer() {
 
         {/* Copyright and Legal Links */}
         <div className="text-center pt-6 border-t border-gray-700">
-          <div className="flex flex-wrap justify-center space-x-2 md:space-x-4 mb-2 text-xs">
-            <a
-              href="/#/privacy"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="/#/terms"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              Terms and Conditions
-            </a>
-            <a
-              href="/#/cookies"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              Cookie Policy
-            </a>
-            <a
-              href="/#/recruitment"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              Recruitment Privacy
-            </a>
-          </div>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-gray-500 mb-2">
             © 2025 Unteyo Journey. All Rights Reserved.
           </p>
+          <div className="flex flex-wrap justify-center space-x-2 md:space-x-4 text-xs">
+            <a
+              href="/#/AboutDeveloper"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+            About Developer
+            </a>
+          </div>
         </div>
       </div>
     </footer>

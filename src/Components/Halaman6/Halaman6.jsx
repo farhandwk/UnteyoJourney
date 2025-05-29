@@ -4,6 +4,7 @@ import anggotabaru from "../../assets/anggotabaru.png";
 import Terai from "../../assets/LogoTerai.png";
 import Hubungins from "../../assets/LogoHubung'ins.png";
 import Perspektif from "../../assets/LogoPerspektif.png";
+import "../font.css"
 
 function Halaman6() {
   const containerVariants = {
@@ -27,7 +28,7 @@ function Halaman6() {
   };
 
   return (
-    <div className="relative min-h-screen py-16 overflow-hidden">
+    <div className="relative min-h-screen md:min-h-[0] lg:min-h-screen py-16 overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial="hidden"
@@ -78,7 +79,7 @@ function Halaman6() {
               <img
                 src={Hubungins}
                 alt="Hubungins"
-                className="w-24 mx-auto grayscale hover:grayscale-0 active:grayscale-0 transition-all duration-300"
+                className="w-24 mx-auto grayscale hover:grayscale-0 active:grayscale-0 focus:grayscale-0 transition-all duration-300"
               />
             </motion.div>
 
@@ -86,16 +87,16 @@ function Halaman6() {
               <h3 className="text-xl font-semibold text-white mb-4">
                 Partner Us:
               </h3>
-              <div className="flex space-x-6 justify-center">
+              <div className="flex space-x-6 justify-center items-center">
                 <img
                   src={Terai}
                   alt="Terai"
-                  className="w-24 grayscale hover:grayscale-0 active:grayscale-0  transition-all duration-300"
+                  className="w-24 grayscale hover:grayscale-0 active:grayscale-0 focus:grayscale-0 transition-all duration-300"
                 />
                 <img
                   src={Perspektif}
                   alt="Perspektif"
-                  className="w-24 grayscale hover:grayscale-0 active:grayscale-0 transition-all duration-300"
+                  className="perspektif brightness-50 w-24 h-9 grayscale hover:grayscale-0 hover:brightness-100 active:grayscale-0 active:brightness-100 focus:grayscale-0 focus:brightness-100 transition-all duration-300"
                 />
               </div>
             </motion.div>
@@ -113,7 +114,7 @@ function Halaman6() {
 
         {/* Tablet Blobs */}
         <div className="hidden md:block lg:hidden">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#b22e15]/30 rounded-full blur-3xl animate-blob-md"></div>
+          <div className="blobMD absolute top-1/4 left-1/4 w-64 h-64 bg-[#b22e15]/30 rounded-full blur-3xl animate-blob-md"></div>
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#e0c39f]/30 rounded-full blur-3xl animate-blob-md animation-delay-2000"></div>
           <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-[#d67e45]/30 rounded-full blur-3xl animate-blob-md animation-delay-4000"></div>
         </div>

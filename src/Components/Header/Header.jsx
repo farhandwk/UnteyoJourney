@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import logo from "../../assets/logo.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import hamburger from "../../assets/lineicons_menu-cheesburger.png"
 import "./Header.css"
 
 function Header({scrollToSection}) {
@@ -27,116 +26,98 @@ function Header({scrollToSection}) {
       }, []);
 
   return (
-    <div className={`containerHeader ${isScrolled ? "scrolled" : ""}
-    flex flex-row
-    w-full h-[100px]
-    justify-between
-    pt-[20px]
-    pl-[20px]
-    pr-[20px]
-    bg-none
-    fixed top-[0]
-    z-999
+    <div>
+      <div className={`containerHeader ${isScrolled ? "scrolled" : ""}
+      flex flex-row
+      w-screen h-[75px]
+      justify-between
+      pt-[20px]
+      pl-[20px]
+      pr-[20px]
+      bg-none
+      fixed top-[0]
+      z-999
+      
+      md:h-[120px]
+      md:pt-[30px]
+      md:pl-[30px]
+      md:pr-[30px]
 
-    md:h-[120px]
+      lg:flex-row-reverse
+      lg:h-[120px]
+      lg:pt-[10px]
+      lg:pl-[150px] lg:pr-[50px]
+      `}
+      >
+            <FontAwesomeIcon icon={faBars} 
+          onClick={onNav}
+          class="
+          onHamburger
+          text-[white]
+          w-[26px]
+          relative
+          top-[-8px]
 
-    lg:flex-row-reverse
-    lg:h-[120px]
-    lg:pt-[10px]
-    lg:pl-[150px] lg:pr-[50px]
-    `}
-    >
-          <FontAwesomeIcon icon={faBars} 
-         onClick={onNav}
-         class="
-         onHamburger
-        text-[white]
-        w-[38px]
-        relative
-        top-[-7px]
+          md:w-[48px]
+          md:flex
+          md:top-[-10px]
 
-        md:w-[48px]
-        md:flex
-        md:top-[-10px]
+          lg:hidden
+          " />
+          
+          <ul
+          class="
+          lgHeader
+          hidden
+          Helvetica
+          text-[white]
+          transition-[0.1s]
+          cursor-[pointer]
 
-        lg:hidden
-        " />
-        
-        <ul
-        class="
-        lgHeader
-        hidden
-        Helvetica
-        text-[white]
-        transition-[0.1s]
-        cursor-[pointer]
+          lg:flex lg:flex-row
+          lg:gap-[70px]
+          lg:p-[30px]
+          lg:text-[18px]
+          "
+          >
+              <li onClick={() => scrollToSection("aboutUs")}>About Us</li>
+              <li onClick={() => scrollToSection("program")}>Program</li>
+              <li onClick={() => scrollToSection("post")}>Post</li>
+              <li onClick={() => scrollToSection("event")}>Event</li>
+              <li onClick={() => scrollToSection("connect")}>Contact Us</li>
+          </ul>
+          <img src={logo}
+          class="
+          w-[73.98px] h-[80px]
+          relative
+          top-[-20px]
 
-        lg:flex lg:flex-row
-        lg:gap-[70px]
-        lg:p-[30px]
-        lg:text-[18px]
-        "
-        >
-            <li onClick={() => scrollToSection("aboutUs")}>About Us</li>
-            <li onClick={() => scrollToSection("program")}>Program</li>
-            <li onClick={() => scrollToSection("post")}>Post</li>
-            <li onClick={() => scrollToSection("event")}>Event</li>
-            <li onClick={() => scrollToSection("connect")}>Contact Us</li>
-        </ul>
-        <img src={logo}
-        class="
-        w-[92.48px] h-[100px]
-        relative
-        top-[-10px]
-
-        md:w-[110.976px] md:h-[120px]
-        "></img>
-        <div 
-        className={`Navbar ${isActive ? 'active' : ''} absolute
+          md:w-[110.976px] md:h-[120px]
+          md:top-[-10px]
+          "></img>
+      </div>
+      <div className={`Navbar ${isActive ? 'active' : ''} fixed
         top-[0px] left-[0px]
-        flex flex-col lg:hidden`}>
+        flex flex-col lg:hidden
+        z-50`}>
             <ul class="
+            NavbarMobile
             HelveticaBold
-            text-[black] text-[18px]
+            text-[white] text-[18px]
             w-screen
-            bg-[white]
+            bg-[black]
             flex flex-col
             p-[25px]
+            pt-[75px]
             gap-[15px]
             ">
-                <li onClick={() => scrollToSection("aboutUs")}>About Us</li>
+              <li onClick={() => scrollToSection("aboutUs")}>About Us</li>
               <li onClick={() => scrollToSection("program")}>Program</li>
               <li onClick={() => scrollToSection("post")}>Post</li>
               <li onClick={() => scrollToSection("event")}>Event</li>
               <li onClick={() => scrollToSection("connect")}>Contact Us</li>
             </ul>
-            <div class="
-            w-screen h-[100px]
-            bg-[black]
-            flex flex-row
-            justify-between
-            pt-[10px]
-            pl-[20px]
-            pr-[20px]
-            pb-[0px]
-            ">
-                <FontAwesomeIcon icon={faBars} 
-                onClick={onNav}
-                class="
-                offHamburger
-            text-[white]
-            w-[43px]
-            relative
-            top-[-7px]
-            " />
-            <img src={logo}
-            class="
-            w-[92.48px] h-[100px]
-            relative
-            top-[-10px]
-            "></img>
-            </div>
-        </div>
+      </div>
     </div>
   )
 }

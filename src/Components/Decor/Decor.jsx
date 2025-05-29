@@ -6,14 +6,18 @@ import "./Decor.css";
 
 function Decor() {
   return (
-    <div className="absolute w-full h-[300%] overflow-hidden z-[1] left-0 top-0">
+    <div className="absolute w-full h-[300%] overflow-hidden z-1 left-0 top-0 overflow-x-hidden">
       
       <img
         className="
           like
           absolute
-          w-[8vw]
-          left-[8vw] top-[35vh]
+          w-[55px]
+          left-[8vw] top-[30vh]
+
+          md:w-[80px] 
+          lg:w-[100px]
+          lg:top-[37vh]
         "
         src={like}
         alt="Like icon"
@@ -23,8 +27,13 @@ function Decor() {
         className="
           love
           absolute
-          w-[9vw]
+          w-[60px]
           left-[80vw] top-[60vh]
+
+          md:w-[80px]
+          
+          lg:w-[100px]
+          lg:top-[60vh]
         "
         src={love}
         alt="Love icon"

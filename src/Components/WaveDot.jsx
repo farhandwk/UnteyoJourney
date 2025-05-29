@@ -190,7 +190,7 @@ const WaveAnimation = () => {
 
   return (
     <div className="relative w-full h-screen bg-[none] overflow-hidden z-[0]">
-      <div ref={waveContainerRef} className="wave-container absolute inset-0 top-[0px] z-[0]" />
+      <div ref={waveContainerRef} className="wave-container absolute inset-0 top-[0px] md:top-[-28vh] lg:top-[0vh] z-[0]" />
     </div>
   );
 };

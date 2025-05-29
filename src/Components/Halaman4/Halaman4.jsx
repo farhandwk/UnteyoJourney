@@ -1,6 +1,6 @@
 import React from "react";
 import logo2 from "../../assets/logo2.png";
-import GaleryofLife from "../../assets/Events/galeryoflife.png";
+import GerakRupa from "../../assets/Events/gerakrupa.jpg"
 
 function Halaman4() {
   return (
@@ -10,16 +10,15 @@ function Halaman4() {
         w-full 
         min-h-screen 
         mb-[20px]
-        md:h-screen 
-        md:max-h-screen 
-        md:overflow-hidden
+        md:overflow-hidde 
+        md:min-h-[50vh]
         md:mb-[0] 
         flex flex-col
         justify-center 
         items-center
         relative
 
-        lg:pt-[100px]
+        lg:pt-[100px] lg:min-h-screen
       "
     >
       <div 
@@ -50,7 +49,7 @@ function Halaman4() {
         >
           Upcoming Event
         </h2>
-        <div
+        {/* <div
           className="
           w-full
           flex flex-col
@@ -63,7 +62,7 @@ function Halaman4() {
           "
         >
           <img
-            src={GaleryofLife}
+            src={GerakRupa}
             alt="Galery of Life Event"
             className="
             w-[230px]
@@ -113,7 +112,7 @@ function Halaman4() {
                   lg:text-[24px]
                   "
               >
-                Galery of Life: Ekspresi Dari Melukis
+                GerakRupa: Mengukir Kreativitas dalam Bingkai Budaya Lokal
               </h3>
               <div
                 className="
@@ -144,7 +143,7 @@ function Halaman4() {
                       lg:text-[16px]
                       "
                 >
-                  JAN 10 2025
+                  MAY 25 2025
                 </p>
                 <h4
                   className="
@@ -164,7 +163,7 @@ function Halaman4() {
                       lg:text-[16px]
                       "
                 >
-                  Taman Kampus 1 UTY
+                  Rumah Gerabah, Taman Pintar Yogyakarta
                 </p>
               </div>
               <div
@@ -177,7 +176,8 @@ function Halaman4() {
                   lg:gap-[25px]
                   "
               >
-                <button
+               <a href="https://wa.me/+6285157576316?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Anda" target="_blank">
+               <button
                   className="
                       w-[100px]
                       border-[2px] border-white
@@ -194,6 +194,8 @@ function Halaman4() {
                 >
                   More Info
                 </button>
+               </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdB2pXiKtb4gsWCepSePFo_w6uPOzPr0OdtuRvKGrd366CBmg/viewform" target="_blank">
                 <button
                   className="
                       w-[100px]
@@ -209,10 +211,11 @@ function Halaman4() {
                       lg:rounded-[8px]
                       "
                 >
-                  Buy Now
+                  Register Now
                 </button>
-              </div>
-              <p
+                </a>
+              </div> */}
+              {/* <p
                 className="
                   HelveticaBold
                   text-[15px]
@@ -222,11 +225,57 @@ function Halaman4() {
                   lg:mt-[25px]
                   "
               >
-                "Ekspresikan Kreativitasmu di Gelary of Life"
-              </p>
-            </div>
+                "Perempuan, Mimpi, dan Perjuangan"
+              </p> 
+            </div> 
+          </section>
+        </div> */}
+
+        <div
+          className="
+          w-full
+          flex flex-col
+          items-center justify-center
+          md:flex-row-reverse
+          md:gap-[50px]
+          lg:flex-row-reverse
+          lg:gap-[100px]
+          lg:mt-[50px]
+          "
+        >
+          <section
+            className="
+            w-[320px] h-auto
+            border-[3px] border-white
+            rounded-[10px]
+            mt-[40px]
+            md:mt-0
+            flex flex-row
+            items-center justify-center
+            p-[10px]
+            gap-[20px]
+            md:w-[400px]
+            md:p-[15px]
+            lg:w-[480px] 
+            lg:p-[20px]
+            lg:gap-[30px]
+            "
+          >
+            <h3
+                className="
+                  HelveticaBold
+                  text-[18px]
+                  md:text-[22px]
+                  lg:text-[24px]
+                  text-white
+                  "
+              >
+                Stay Tune!
+              </h3>
+
           </section>
         </div>
+
       </div>
     </div>
   );

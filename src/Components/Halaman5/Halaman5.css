@@ -12,60 +12,8 @@
     background: none;
     overflow: hidden;
     backdrop-filter: blur(100px);
-}
-
-.card-image {
-    grid-area: 1 / 1 / 2 / 2;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.card-content {
-    grid-area: 1 / 1 / 2 / 2;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-.card-container-wrapper {
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    transition: 0.5s;
-}
-
-.blur-container {
-    position: relative;
-    transition: 0.5s;
-}
-
-/* Pseudo-elemen untuk efek blur di sisi kiri dan kanan */
-.blur-container::before,
-.blur-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.blur-container::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(0,0,0,1), transparent);
-}
-
-.blur-container::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(0,0,0,1) 40%, transparent);
-}
-
-/* Responsive adjustments */
-@media (min-width: 768px) {
-    .containerHal5 {
-        height: 100vh;
-        width: 100vw;
-        overflow: hidden;
-    }
+    overflow-x: hidden;
+    overflow-y: hidden;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: auto;
 }

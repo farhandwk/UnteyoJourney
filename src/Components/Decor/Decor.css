@@ -76,9 +76,46 @@
     animation: bounce 1.5s ease-in-out infinite;
 }
 
+/* Untuk HP / layar kecil */
+@media (max-width: 768px) {
+    .spray3Decor {
+      width: 150px;
+      height: 150px;
+      top: 230vh;
+      right: -10vw;
+      filter: blur(50px);
+      border-radius: 150px;
+    }
+
+    .spray1Decor {
+        width: 200px;
+        height: 200px;
+        top: -20vh;
+        left: 85vw;
+        filter: blur(60px);
+        border-radius: 10vw;
+      }
+    
+      .spray2Decor {
+        width: 150px;
+        height: 250px;
+        top: 85vh;
+        left: -10vw;
+        filter: blur(50px);
+        border-radius: 15vw;
+      }
+      .spray2-2Decor {
+        width: 150px;
+        height: 250px;
+        top: 85vh;
+        left: -10vw;
+        filter: blur(50px);
+        border-radius: 15vw;
+      }
+}
 
 /* Untuk HP / layar kecil */
-@media (max-width: 758px) {
+@media (max-width: 480px) {
     .spray3Decor {
       width: 150px;
       height: 150px;
@@ -101,7 +138,7 @@
         width: 150px;
         height: 250px;
         top: 85vh;
-        left: -15vw;
+        left: -20vw;
         filter: blur(50px);
         border-radius: 15vw;
       }
@@ -109,8 +146,45 @@
         width: 150px;
         height: 250px;
         top: 85vh;
-        left: -15vw;
+        left: -20vw;
         filter: blur(50px);
         border-radius: 15vw;
       }
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+  .spray1Decor {
+    top: clamp(-150px, -28vh, -200px);
+    left: clamp(700px, 85vw, 1000px)
+  }
+
+  .spray2Decor {
+    top: clamp(350px, 40vh, 800px);
+    width: clamp(200px, 30vw, 300px);
+    left: clamp(-110px, -15vw, -200px);
+    height: clamp(300px, 30vw, 400px);
+  }
+
+  .spray2-2Decor {
+    top: clamp(350px, 40vh, 800px);
+    width: clamp(200px, 30vw, 300px);
+    left: clamp(-110px, -15vw, -200px);
+    height: clamp(300px, 30vw, 400px);
+  }
+
+  .spray3Decor {
+    top: clamp(700px, 50vh, 1000px);
+    width: clamp(300px, 40vw, 350px);
+    height: clamp(300px, 40vw, 350px);
+    filter: blur(90px);
+    left: clamp(400px, 75vw, 700px);
+  }
+
+  .like {
+    top: clamp(150px, 10vh, 250px);
+  }
+  
+  .love {
+    top: clamp(350px, 30vh, 500px);
+  }
 }

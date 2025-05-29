@@ -68,6 +68,8 @@ function Halaman3() {
       justify-center
       items-center
       z-[2]
+      md:p-[100px] md:pt-[0px]
+        md:overflow-hidden
       "
     >
       <h2
