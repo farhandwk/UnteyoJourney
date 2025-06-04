@@ -47,7 +47,7 @@ function Halaman4() {
           lg:mt-[120px]
           "
         >
-          Upcoming Event
+          Event Is Coming
         </h2>
         {/* <div
           className="
