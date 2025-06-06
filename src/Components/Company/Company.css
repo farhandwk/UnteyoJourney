@@ -1,0 +1,17 @@
+.Scrolled {
+    overflow-x: scroll;
+    width: 100vw;
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+    box-sizing: border-box;
+}
+
+.coreValue {
+    flex-shrink: 0;
+}
+
+.coreValue:last-child {
+    margin-right: 0;
+}
