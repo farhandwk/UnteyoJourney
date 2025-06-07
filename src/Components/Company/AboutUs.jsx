@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import "./Company.css"
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
@@ -33,28 +33,83 @@ function AboutUs() {
         {id: '3', title: 'Providing Information and Resources', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. Aenean feugiat magna erat, nec mollis lacus laoreet vel. Suspendisse sit amet lobortis felis. Mauris egestas, est ut fringilla gravida, diam dolor tincidunt est, ut accumsan dolor est vitae ante. Pellentesque sit amet tristique neque, a accumsan erat. Maecenas scelerisque convallis vestibulum. Donec in nibh sed sapien aliquam tincidunt.'},
     ]
 
+    const ourTeam = [
+        {id: '1', img: atun, title: 'Aceng', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. '},
+        {id: '2', img: atun, title: 'Aceng', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. '},
+        {id: '3', img: atun, title: 'Aceng', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. '},
+    ]
+
+    const testimonials = [
+        {id: '1', img: atun, title: 'Mamat Beceng', position: 'PT. Mencari Cinta Sejati', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit.'},
+        {id: '1', img: atun, title: 'Mamat Beceng', position: 'PT. Mencari Cinta Sejati', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit.'}
+    ]
+
+    const scrollContainerRef = useRef(null);
+    const imageRef = useRef(null);
+
+    useEffect(() => {
+        const scrollContainer = scrollContainerRef.current;
+        const image = imageRef.current;
+
+        if (!scrollContainer || !image) return;
+
+        const handleScroll = () => {
+        const scrollTop = scrollContainer.scrollTop;
+        const maxScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+        const scrollFraction = scrollTop / maxScroll;
+
+        // Atur seberapa jauh gambar akan bergerak
+        const maxImageMove = 150; // dalam pixel
+        const imageMoveX = scrollFraction * maxImageMove;
+
+        // Terapkan transformasi secara langsung (lebih baik untuk performa daripada state)
+        image.style.transform = `translateX(${imageMoveX}px)`;
+        };
+
+        // Tambahkan event listener saat komponen mount
+        scrollContainer.addEventListener('scroll', handleScroll);
+
+        // Wajib: Hapus event listener saat komponen unmount untuk mencegah memory leak
+        return () => {
+        scrollContainer.removeEventListener('scroll', handleScroll);
+        };
+    }, []); // Array dependensi kosong agar useEffect hanya berjalan sekali
+
+
   return (
     <div className='bg-[black] w-screen w-max-screen h-auto'>
         <Header></Header>
         <div className='flex flex-col justify-center items-center
-        mt-[70px]
+        mt-[100px] gap-[40px]
+        
+        lg:mt-[120px]
         '>
             <h3 className='HelveticaBold text-[white] text-[25px]'>About Us</h3>
-            <div className='flex felx-row gap-[20px]'>
+            <div className='
+            flex flex-col items-center p-[20px]
+            gap-[40px]
+            lg:flex-row-reverse
+            lg:gap-[80px]
+            lg:w-[80%]
+            '>
+                <div className='flex flex-row gap-[20px]
+            '>
                 <img src={dummyGambar} className='
-                w-[100px]
+                w-[100px] lg:w-[150px]
                 '></img>
                 <img src={dummyGambar} className='
-                w-[100px]
+                w-[100px] lg:w-[150px]
                 '></img>
                 <img src={dummyGambar} className='
-                w-[100px]
+                w-[100px] lg:w-[150px]
                 '></img>
             </div>
             <div className='HelveticaBold text-[white] p-[22px]
             flex flex-col gap-[10px]
+
+            lg:w-[55%]
             '>
-                <h4 className='text-[20px]'>What Is Unteyo Journey?</h4>
+                <h4 className='text-[25px]'>What Is Unteyo Journey?</h4>
                 <p className='text-[15px]'>
                     Part of the Hubung Group, it is a student empowerment media platform, providing information, resources, and creative outlets that encourage critical thinking, design thinking, and self-development.
                 </p>
@@ -62,14 +117,20 @@ function AboutUs() {
                     Addresses academic and non-academic issues affecting students, with a focus on problem solving and creating real impact.
                 </p>
             </div>
+            </div>
         </div>
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center p-[20px] pt-[40px] gap-[40px]'>
             <h3 className='HelveticaBold text-[white]
             text-[25px]
             '>Core Values</h3>
             <div className='
             Scrolled
-            flex flex-row gap-[20px]'>
+            flex flex-row gap-[30px]
+            
+            lg:flex-wrap
+            lg:gap-[100px]
+            lg:justify-center
+            '>
                 {coreValues.map((item) => (
                     <div key={item.id} className='
                     coreValue
@@ -81,7 +142,7 @@ function AboutUs() {
                         <img src={item.img}></img>
                         <h4 className='
                         HelveticaBold
-                        text-[20px] 
+                        text-[25px] 
                         '>{item.title}</h4>
                         <p className='
                         text-[13px]
@@ -92,26 +153,35 @@ function AboutUs() {
         </div>
         <div className='
         w-100% flex flex-col items-center
-        p-[20px]
+        p-[20px] pt-[40px]
         text-[white]
-        gap-[20px]
+        gap-[40px]
+
+        lg:p-[30px] lg:pt-[50px]
         '
         style={{
                 backgroundImage: `url(${dummyGambar})`,
                 backgroundSize: 'cover',        // Membuat gambar menutupi seluruh div tanpa merusak rasio aspek
                 backgroundPosition: 'center',   // Memposisikan gambar di tengah
                 backgroundRepeat: 'no-repeat',   // Mencegah gambar berulang jika ukurannya kecil
-                boxShadow: 'inset 0px 100px 120px 40px rgba(0, 0, 0, 1), inset  0px 100px 120px 40px rgba(0, 0, 0, 1)'
+                boxShadow: 'inset 0px 150px 120px -40px rgba(0, 0, 0, 1), inset 0px -150px 120px -40px rgba(0, 0, 0, 1)'
             }}
         >
             <h3 className='
-            HelveticaBold text-[20px]
+            HelveticaBold text-[25px]
             '>
-                Core Values
+                Our Story
             </h3>
-            {ourStory.map((item) => (
+            <div className=' flex flex-col
+            
+            lg:flex-row lg:w-full lg:flex-wrap
+            lg:items-center lg:justify-center lg:gap-[40px]
+            '>
+                {ourStory.map((item) => (
                 <div key={item.id} className='
                 flex flex-col items-center gap-[10px]
+
+                lg:w-[380px]
                 '>
                     <h4 className='
                     HelveticaBold text-[17px]
@@ -122,14 +192,15 @@ function AboutUs() {
                     '>{item.text}</p>
                 </div>
             ))}
+            </div>
         </div>
         <div className='
         flex flex-col text-[white] items-center
-        p-[20px] gap-[20px]
+        p-[30px] gap-[40px] pt-[40px]
         '>
             <h3 className='
             HelveticaBold
-            text-[20px]
+            text-[25px]
             '>
                 Target Audience
             </h3>
@@ -148,10 +219,10 @@ function AboutUs() {
             </div>
         </div>
         <div className='
-        text-[white] p-[20px] flex flex-col items-center gap-[20px]
+        text-[white] p-[20px] flex flex-col items-center gap-[40px] pt-[40px]
         '>
             <h3 className='
-            HelveticaBold text-[20px]
+            HelveticaBold text-[25px]
             '>
                 What We Do?
             </h3>
@@ -213,10 +284,10 @@ function AboutUs() {
         </div>
         <div className='
         text-[white]
-        flex flex-col items-center gap-[20px] p-[20px]
+        flex flex-col items-center gap-[40px] p-[20px] pt-[40px]
         '>
             <h3 className='
-            HelveticaBold text-[20px]
+            HelveticaBold text-[25px]
             '>
                 Why Choose Us?
             </h3>
@@ -224,11 +295,14 @@ function AboutUs() {
             flex flex-col gap-[20px]
             '>
                 <img src={dummyGambar}
+                ref={imageRef}
                 className='
                 w-[200px]
                 '
                 ></img>
-                <div className='
+                <div 
+                ref={scrollContainerRef}
+                className='
                 border-[2px] border-white
                 flex flex-col
                 h-[200px] overflow-scroll
@@ -245,6 +319,85 @@ function AboutUs() {
                     </div>
                 ))}
                 </div>
+            </div>
+        </div>
+        <div className='
+        text-[white] flex flex-col items-center p-[20px] gap-[40px] pt-[40px]
+        '>
+            <h3
+            className='
+            HelveticaBold text-[25px]
+            '
+            >
+                Our Team
+            </h3>
+            <div className='
+            flex flex-row flex-wrap justify-around gap-[20px]
+            '>
+                {ourTeam.map((item) => (
+                <div key={item.id} className='
+                flex flex-col items-center
+                w-[150px]
+                '>
+                    <img className='
+                    w-[150px]
+                    ' src={item.img}></img>
+                    <h4 className='
+                    HelveticaBold text-[18px]
+                    '>{item.title}</h4>
+                    <p className='
+                    Helvetica text-[13px] text-justify
+                    '>{item.text}</p>
+                </div>
+            ))}
+            </div>
+        </div>
+        <div className='
+        text-[white] flex flex-col items-center p-[20px] gap-[40px] pt-[40px]
+        '>
+            <h3 className='
+            HelveticaBold text-[25px]
+            '>Testimonials</h3>
+            <div className='
+            flex flex-col items-center gap-[50px]
+            '>
+                {testimonials.map((item) => (
+                    <div key={item.id}
+                    className='
+                    flex flex-row items-center
+                    bg-[#fefefe]/15
+                    p-[30px] gap-[20px] rounded-[20px]
+                    '
+                    style={{
+                        // Tumpukan beberapa bayangan untuk efek glow
+                        boxShadow: `
+                        0 0 5px rgba(255, 255, 255, 0.9),
+                        0 0 10px rgba(173, 216, 230, 0.8),
+                        0 0 20px rgba(135, 206, 250, 0.7),
+                        0 0 35px rgba(0, 191, 255, 0.6)
+                        `
+                    }}
+                    >
+                        <img src={item.img}
+                        className='
+                        w-[90px] h-[100px]
+                        '
+                        ></img>
+                        <div className='
+                        flex flex-col
+                        '>
+                            <h4 className='
+                            HelveticaBold text-[18px]
+                            '>{item.title}</h4>
+                            <h5 className='
+                            HelveticaBold text-[15px]
+                            '>{item.position}</h5>
+                            <p className='
+                            Helvetica text-[13px] text-justify
+                            '>{item.text}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
         <Footer></Footer>
