@@ -4,6 +4,7 @@ import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import dummyGambar from "../../assets/Post/Post1.png"
 import atun from "../../assets/atun no bg.png"
+import dummy2 from "../../assets/dummy.jpg"
 
 function AboutUs() {
     const coreValues = [
@@ -59,7 +60,7 @@ function AboutUs() {
         const scrollFraction = scrollTop / maxScroll;
 
         // Atur seberapa jauh gambar akan bergerak
-        const maxImageMove = 150; // dalam pixel
+        const maxImageMove = 110; // dalam pixel
         const imageMoveX = scrollFraction * maxImageMove;
 
         // Terapkan transformasi secara langsung (lebih baik untuk performa daripada state)
@@ -82,12 +83,17 @@ function AboutUs() {
         <div className='flex flex-col justify-center items-center
         mt-[100px] gap-[40px]
         
+        md:mt-[120px]
+
         lg:mt-[120px]
         '>
             <h3 className='HelveticaBold text-[white] text-[25px]'>About Us</h3>
             <div className='
             flex flex-col items-center p-[20px]
             gap-[40px]
+
+            md:flex-row-reverse
+
             lg:flex-row-reverse
             lg:gap-[80px]
             lg:w-[80%]
@@ -107,6 +113,8 @@ function AboutUs() {
             <div className='HelveticaBold text-[white] p-[22px]
             flex flex-col gap-[10px]
 
+            md:w-[50%]
+
             lg:w-[55%]
             '>
                 <h4 className='text-[25px]'>What Is Unteyo Journey?</h4>
@@ -124,22 +132,37 @@ function AboutUs() {
             text-[25px]
             '>Core Values</h3>
             <div className='
-            Scrolled
+            scrollbar-hide
+            overflow-x-scroll
+            box-border
+            w-[100vw]
+            pl-[16px]
+            pr-[16px]
             flex flex-row gap-[30px]
             
-            lg:flex-wrap
-            lg:gap-[100px]
-            lg:justify-center
+            md:flex-wrap md:h-[900px] md:w-[800px]
+            md:justify-around md:items-center
+            
+            lg:flex-wrap lg:h-[1000px] lg:w-[1100px]
+            lg:justify-around lg:items-center
             '>
                 {coreValues.map((item) => (
                     <div key={item.id} className='
                     coreValue
+                    last:mr-[0]
+                    shrink-0
                     w-[250px]
                     Helvetica text-white 
-                    flex flex-col items-center border-[2px]
+                    flex flex-col items-center 
                     w-min-content
+
+                    md:w-[200px] 
+
+                    lg:w-[250px]
                     '>
-                        <img src={item.img}></img>
+                        <img src={item.img} className='
+                        
+                        '></img>
                         <h4 className='
                         HelveticaBold
                         text-[25px] 
@@ -157,6 +180,8 @@ function AboutUs() {
         text-[white]
         gap-[40px]
 
+        md:p-[30px] md:pt-[50px]
+        
         lg:p-[30px] lg:pt-[50px]
         '
         style={{
@@ -174,6 +199,9 @@ function AboutUs() {
             </h3>
             <div className=' flex flex-col
             
+            md:flex-row md:w-full md:flex-wrap
+            md:items-center md:justify-center md:gap-[40px]
+            
             lg:flex-row lg:w-full lg:flex-wrap
             lg:items-center lg:justify-center lg:gap-[40px]
             '>
@@ -181,6 +209,8 @@ function AboutUs() {
                 <div key={item.id} className='
                 flex flex-col items-center gap-[10px]
 
+                md:w-[220px]
+                
                 lg:w-[380px]
                 '>
                     <h4 className='
@@ -206,15 +236,30 @@ function AboutUs() {
             </h3>
             <div className='
             max-w-[100%] flex flex-row items-center justify-center gap-[10px]
+
+            md:gap-[60px]
+            
+            lg:gap-[60px]
             '>
-                <img src={dummyGambar}
+                <img src={dummy2}
                 className='
                 w-[150px]
+                rounded-[20px]
+
+                md:w-[280px]
+                
+                lg:w-[300px]
                 '
                 ></img>
                 <p className='
                 Helvetica
                 text-[11.4px]
+
+                md:text-[20px]
+                md:w-[45%]
+                
+                lg:text-[20px]
+                lg:w-[40%]
                 '>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. Aenean feugiat magna erat, nec mollis lacus laoreet vel. Suspendisse sit amet lobortis felis. Mauris egestas, est ut fringilla gravida, diam dolor tincidunt est, ut accumsan dolor est vitae ante. Pellentesque sit amet tristique neque, a accumsan erat. Maecenas scelerisque convallis vestibulum. Donec in nibh sed sapien aliquam tincidunt</p>
             </div>
         </div>
@@ -227,20 +272,31 @@ function AboutUs() {
                 What We Do?
             </h3>
             <div className='
+            scrollbar-hide
             h-[500px] overflow-scroll
+            flex flex-col 
+
+            md:flex-row md:items-center md:justify-center
+            md:gap-[40px] md:h-[700px]
+            
+            lg:flex-row lg:items-center lg:justify-center
+            lg:gap-[40px]
             '>
                 {whatweDo.map((item) => (
             // div ini adalah container untuk satu item lengkap (gambar + teks)
-            <div key={item.id} className='flex flex-col items-center gap-[7px]
+            <div key={item.id} className='flex flex-col items-center gap-[7px] w-[100%]
+
+            md:w-[30%]
+            
+            lg:w-[35%]
             '>
 
                 {/* ===== DIV BARU UNTUK GLOW ===== */}
                 <div
-                className='flex items-center justify-center' // Untuk menengahkan gambar di dalamnya
+                className='flex items-center justify-center
+                w-[240px] h-[240px]
+                ' // Untuk menengahkan gambar di dalamnya
                 style={{
-                // Kita perbesar ukuran kontainer untuk menampung glow yang lebih besar
-                width: '240px',
-                height: '240px',
                 // Tumpuk beberapa gradien untuk efek yang kaya.
                 // Lapisan pertama akan berada paling atas.
                 background: `
@@ -285,7 +341,15 @@ function AboutUs() {
         <div className='
         text-[white]
         flex flex-col items-center gap-[40px] p-[20px] pt-[40px]
-        '>
+        '
+        style={{
+                        backgroundImage: `url(${dummy2})`,
+                        backgroundSize: 'cover',        // Membuat gambar menutupi seluruh div tanpa merusak rasio aspek
+                        backgroundPosition: 'center',   // Memposisikan gambar di tengah
+                        backgroundRepeat: 'no-repeat',
+                        boxShadow: 'inset 0px 280px 240px 60px rgba(0, 0, 0, 1), inset 0px -280px 120px -40px rgba(0, 0, 0, 1)'
+                    }}
+        >
             <h3 className='
             HelveticaBold text-[25px]
             '>
@@ -293,19 +357,41 @@ function AboutUs() {
             </h3>
             <div className='
             flex flex-col gap-[20px]
-            '>
+            bg-[#d9d9d9]/30
+            p-[20px] pt-[30px] rounded-[20px]
+
+            md:flex-row md:w-[80%]
+            
+            lg:flex-row lg:w-[80%]
+            '
+            
+            style={{
+                        // Tumpukan beberapa bayangan untuk efek glow
+                        boxShadow: `
+                        0 0 5px rgba(255, 255, 255, 0.9),
+                        0 0 10px rgba(173, 216, 230, 0.8),
+                        0 0 20px rgba(135, 206, 250, 0.7),
+                        0 0 35px rgba(0, 191, 255, 0.6)
+                        `
+                    }}>
                 <img src={dummyGambar}
                 ref={imageRef}
                 className='
-                w-[200px]
+                w-[200px] rounded-[20px]
+
+                lg:w-[400px]
                 '
                 ></img>
                 <div 
                 ref={scrollContainerRef}
                 className='
-                border-[2px] border-white
+                scrollbar-hide
                 flex flex-col
                 h-[200px] overflow-scroll
+
+                md:h-auto
+                
+                lg:h-auto
                 '>
                     {whychooseUs.map((item) => (
                     <div key={item.id}>
@@ -333,6 +419,10 @@ function AboutUs() {
             </h3>
             <div className='
             flex flex-row flex-wrap justify-around gap-[20px]
+
+            md:w-[90%]
+            
+            lg:w-[70%]
             '>
                 {ourTeam.map((item) => (
                 <div key={item.id} className='

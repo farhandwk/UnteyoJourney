@@ -1,17 +1,9 @@
-.Scrolled {
-    overflow-x: scroll;
-    width: 100vw;
-
-    padding-left: 16px;
-    padding-right: 16px;
-
-    box-sizing: border-box;
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
 }
 
-.coreValue {
-    flex-shrink: 0;
-}
-
-.coreValue:last-child {
-    margin-right: 0;
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
