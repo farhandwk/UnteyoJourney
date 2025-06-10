@@ -51,7 +51,7 @@ function Header({scrollToSection}) {
       >
             <FontAwesomeIcon icon={faBars} 
           onClick={onNav}
-          class="
+          className="
           onHamburger
           text-[white]
           w-[26px]
@@ -66,7 +66,7 @@ function Header({scrollToSection}) {
           " />
           
           <ul
-          class="
+          className="
           lgHeader
           hidden
           Helvetica
@@ -87,7 +87,7 @@ function Header({scrollToSection}) {
               <li onClick={() => scrollToSection("connect")}>Contact Us</li>
           </ul>
           <img src={logo}
-          class="
+          className="
           w-[73.98px] h-[80px]
           relative
           top-[-20px]
@@ -100,7 +100,7 @@ function Header({scrollToSection}) {
         top-[0px] left-[0px]
         flex flex-col lg:hidden
         z-50`}>
-            <ul class="
+            <ul className="
             NavbarMobile
             HelveticaBold
             text-[white] text-[18px]
