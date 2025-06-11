@@ -18,7 +18,7 @@ function Footer({scrollToSection}) {
     {
       title: "Company",
       items: [
-        { name: "About Us", link: "aboutUs" },
+        { name: "About Us", link: "/#/AboutUs" },
         { name: "Program", link: "program" },
 
         { name: "Contact Us", link: "connect" },
@@ -82,7 +82,8 @@ function Footer({scrollToSection}) {
                         <li key={itemIndex}>
                           <a
                             className="text-sm text-gray-300 hover:text-white"
-                            onClick={() => scrollToSection(item.link)}
+                            // onClick={() => scrollToSection(item.link)}
+                            href="instagram.com"
                           >
                             {item.name}
                           </a>

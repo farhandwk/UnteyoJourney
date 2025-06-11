@@ -8,6 +8,8 @@ import TermsAndConditions from "./Components/TermsAndCondition/TermsAndCondtion"
 import RecruitmentPrivacy from "./Components/RecruitmentPrivacy/RecruitmentPrivacy";
 import AboutDeveloper from "./Components/AboutDeveloper/AboutDeveloper";
 import Program from "./Components/Company/Program";
+import AboutUs from "./Components/Company/AboutUs";
+import ContatUs from "./Components/Company/contactUs";
 import "./App.css";
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
           <Route path="*" element={<NotFound/>}></Route>
           <Route path="/AboutDeveloper" element={<AboutDeveloper/>}></Route>
           <Route path="/program" element={<Program/>}></Route>
+          <Route path="/AboutUs" element={<AboutUs/>}></Route>
+          <Route path="/ContactUs" element={<ContatUs/>}></Route>
         </Routes>
       </Router>
     </div>
