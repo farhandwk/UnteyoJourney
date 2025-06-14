@@ -10,6 +10,8 @@ import img6 from "../../assets/exampleImage.JPG";
 
 import direktur from "../../assets/farhan no bg.png";
 
+  const imagesMain = [img1, img1, img1];
+
 const images = [img1, img2, img3, img4, img5, img6];
 
 function Program() {    
@@ -46,18 +48,17 @@ function Program() {
   };
 
   return (
+    <>
+    <Header />
     <div id="program" className="
      bg-[black]
      w-full h-full
      flex justify-center items-center flex-col
      relative
-     md:flex-row md:p-[70px] md:pt-[100px] md:min-h-min 
-     md:max-h-min md:h-min 
-     md:overflow-hidden
+
      lg:p-[200px] lg:pt-[100px]
      text-[white]
     ">
-        <Header></Header>
     
         <div id="ourprogram" className="
          text-[white]
@@ -65,8 +66,8 @@ function Program() {
          flex flex-col items-start
          p-[35px]
          gap-[10px]
-         md:pr-[50px]
-         lg:pr-[100px]
+         md:p-[50px]
+         lg:p-[50px]
         ">
             <h2 className="
              w-full
@@ -78,28 +79,63 @@ function Program() {
             ">
                 Our Program
             </h2>
-            <h4 className="
-             HelveticaBold
-             md:text-[35px]
-             lg:text-[45px]"
-             >
-                Program Overview
-            </h4>
-            <p>Part of the Hubung Group, it is a student empowerment media platform, providing information, 
-                resources, and creative outlets that encourage critical thinking, design thinking, and 
-                self-development.
-            </p>
-            <p>Addresses academic and non-academic issues affecting students, with a focus 
-                on problem solving and creating real impact.</p>
+
+            <div className="
+             md:flex md:flex-row-reverse md:gap-4 md:items-center
+            ">
+                {/* Split Image Container */}
+                <div className="
+                relative overflow-hidden shadow-2xl bg-black my-8
+                ">
+                    <div className="
+                    flex h-40 gap-3
+                    md:h-75 md:gap-4
+                    lg:h-96 lg:gap-6
+                    ">
+                        {imagesMain.map((image, index) => (
+                        <div
+                            key={index}
+                            className="flex-1 relative overflow-hidden"
+                        >
+                        <img
+                        src={image}
+                        alt={`Team photo ${index + 1}`}
+                        className={`w-full h-full ${
+                            index === 0 ? 'object-left object-cover' :
+                            index === 1 ? 'object-center object-cover' :
+                            'object-right object-cover'
+                        }`}
+                        />
+                        </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="
+                 md:flex md:flex-col
+                ">
+                    <h4 className="
+                    HelveticaBold"
+                    >
+                        Program Overview
+                    </h4>
+                    <p>Part of the Hubung Group, it is a student empowerment media platform, providing information, 
+                        resources, and creative outlets that encourage critical thinking, design thinking, and 
+                        self-development.
+                    </p>
+                    <p>Addresses academic and non-academic issues affecting students, with a focus 
+                        on problem solving and creating real impact.</p>
+                </div>
+            </div>
         </div>
+
         <div id="programphilosophy" className="
          text-[white]
          mt-[100px]
          flex flex-col items-start
          p-[35px]
          gap-[10px]
-         md:pr-[50px]
-         lg:pr-[100px]
+         md:p-[50px]
+         lg:p-[100px]
         ">
                 <h2 className="
                 w-full
@@ -121,6 +157,9 @@ function Program() {
                 w-[340px]
                 mt-5
                 shadow-[0_0_32px_8px_rgba(255,140,0,0.5)]
+
+                md:w-[600px] 
+                lg:w-[1000px]
                 ">
                     <p className="text-white text-sm font-normal leading-tight">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -136,12 +175,24 @@ function Program() {
         </div>
         <div id="dive" className="
          text-[white]
+         mt-[100px]
          flex flex-col items-center
          p-[35px]
          gap-[10px]
-         md:pr-[50px]
-         lg:pr-[100px]
+         md:p-[50px]
+         lg:p-[100px]
         ">
+            <h2 className="
+             w-full
+             HelveticaBold
+             text-[25px]
+             md:text-[35px]
+             lg:text-[45px]
+             text-center
+            ">
+                Dive into Our Programs
+            </h2>
+
             <div className="
              rounded-xl 
              bg-[#222]
@@ -151,8 +202,14 @@ function Program() {
              flex flex-row
              text-center
              items-center
+             justify-center
              gap-4
-            overflow-x-scroll
+             overflow-x-scroll
+
+             md:w-[700px]
+             lg:w-[1000px]
+             lg:gap-17
+             scrollbar-hide
             ">
 
                 <div className="
@@ -171,17 +228,19 @@ function Program() {
             </div>
             
             <div className="
-             w-[90%]
+             w-[95%]
+             md:w-[85%]
+             lg:w-[670px]
              ">
                 <h4 className="
                 HelveticaBold
                 md:text-[35px]
-                lg:text-[45px]
+                lg:text-[35px]
                 text-center
                 ">
                     Judul Program
                 </h4>
-                <p className="text-white text-sm font-normal leading-tight">
+                <p className="text-white text-sm font-normal">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna 
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
@@ -192,7 +251,11 @@ function Program() {
                     deserunt mollit anim id est laborum.
                 </p>
 
-                <div className="max-w-sm mx-auto">
+                <div className="
+                 max-w-md mx-auto
+                 md:max-w-2xl
+                 lg:max-w-2xl
+                ">
 
                 <img 
                     src={img1} 
@@ -203,27 +266,27 @@ function Program() {
                         <img 
                         src={img2} 
                         alt="Image 2" 
-                        className="h-6 rounded object-cover" 
+                        className="h-6 md:h-12 rounded object-cover" 
                         />
                         <img 
                         src={img3} 
                         alt="Image 3" 
-                        className="h-6 rounded object-cover" 
+                        className="h-6 md:h-12 rounded object-cover" 
                         />
                         <img 
                         src={img4} 
                         alt="Image 4" 
-                        className="h-10 rounded object-cover p-0.5 border-2 border-white" 
+                        className="h-10 md:h-20 rounded object-cover p-0.5 border-2 border-white" 
                         />
                         <img 
                         src={img5} 
                         alt="Image 5" 
-                        className="h-6 rounded object-cover" 
+                        className="h-6 md:h-12 rounded object-cover" 
                         />
                         <img 
                         src={img6} 
                         alt="Image 6" 
-                        className="h-6 rounded object-cover" 
+                        className="h-6 md:h-12 rounded object-cover" 
                         />
                     </div>
                 </div>
@@ -232,11 +295,10 @@ function Program() {
         <div id="faq" className="
             text-[white]
             mt-[100px]
-            flex flex-col items-start
+            flex flex-col items-center 
             p-[35px]
             gap-[10px]
-            md:pr-[50px]
-            lg:pr-[100px]
+
         ">
             <h2 className="
                 w-full
@@ -250,10 +312,10 @@ function Program() {
             </h2>
             <p>Beberapa hal yang sering ditanyakan oleh sobat Be Wise!</p>
 
-            <div className="min-h-auto p-6">
-                <div className="max-w-2xl mx-auto space-y-4">
+            <div className="w-full  flex justify-center">
+                <div className="w-full md:w-xl lg:w-2xl space-y-4">
                     {faqData.map((faq, index) => (
-                    <div key={index} className="bg-white/15 rounded-lg overflow-hidden">
+                    <div key={index} className="w-full md:w-xl lg:w-2xl bg-white/15 rounded-lg overflow-hidden">
                         <button
                         onClick={() => toggleAccordion(index)}
                         className="
@@ -268,9 +330,9 @@ function Program() {
                         >
                         <span className="font-medium">{faq.question}</span>
                         {openIndex === index ? (
-                            <span className="text-xl font-bold">−</span>
+                            <span className="text-xl font-bold ml-5">−</span>
                         ) : (
-                            <span className="text-xl font-bold">+</span>
+                            <span className="text-xl font-bold ml-5">+</span>
                         )}
                         </button>
                         
@@ -290,8 +352,8 @@ function Program() {
          flex flex-col items-start
          p-[35px]
          gap-[10px]
-         md:pr-[50px]
-         lg:pr-[100px]
+         md:p-[50px]
+         lg:p-[100px]
         ">
             <h2 className="
                 w-full
@@ -313,19 +375,29 @@ function Program() {
                 w-[340px]
                 mt-5
                 shadow-[0_0_32px_8px_rgba(104,167,170,0.5)]
+
+                md:w-xl
+                md:flex md:flex-row md:gap-4 md:items-center
+
+                lg:w-2xl
                 ">
                 <img
                     src={direktur} 
                     className="rounded-full h-48 mb-4 mx-auto"
                 />
-                <h1 className="text-white text-xl font-bold mb-2">Mamat Beceng</h1>
-                <h2 className="text-gray-300 text-sm mb-4">Direktur PT. Mencari Cinta Sejati</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna 
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+                <div className="
+                 md:flex md:flex-col md:items-start
+                ">
+
+                    <h1 className="text-white text-xl font-bold mb-2">Mamat Beceng</h1>
+                    <h2 className="text-gray-300 text-sm mb-4">Direktur PT. Mencari Cinta Sejati</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna 
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
             </div>
             <div className="
                 rounded-xl 
@@ -336,23 +408,34 @@ function Program() {
                 w-[340px]
                 mt-5
                 shadow-[0_0_32px_8px_rgba(104,167,170,0.5)]
+
+                md:w-xl
+                md:flex md:flex-row md:gap-4 md:items-center
+
+                lg:w-2xl
                 ">
                 <img
                     src={direktur} 
                     className="rounded-full h-48 mb-4 mx-auto"
                 />
-                <h1 className="text-white text-xl font-bold mb-2">Mamat Beceng</h1>
-                <h2 className="text-gray-300 text-sm mb-4">Direktur PT. Mencari Cinta Sejati</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna 
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+                <div className="
+                 md:flex md:flex-col md:items-start
+                ">
+
+                    <h1 className="text-white text-xl font-bold mb-2">Mamat Beceng</h1>
+                    <h2 className="text-gray-300 text-sm mb-4">Direktur PT. Mencari Cinta Sejati</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna 
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
             </div>
         </div>
 
     </div>
+    </>
   );
 }
 
