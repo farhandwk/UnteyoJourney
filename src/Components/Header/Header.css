@@ -17,3 +17,10 @@
     text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
     transition: 0.1s;
 }
+
+/* masih css biasa krn tailwind gagal import */
+@media (min-width: 1024px) {
+  .onHamburger {
+    display: none;
+  }
+}
