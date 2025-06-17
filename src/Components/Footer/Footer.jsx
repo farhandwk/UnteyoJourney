@@ -15,7 +15,7 @@ function Footer({ scrollToSection }) {
     {
       title: "Company",
       items: [
-        { name: "About Us", link: "aboutUs" },
+        { name: "About Us", link: "/#/AboutUs" },
         { name: "Program", link: "program" },
         { name: "Contact Us", link: "connect" },
       ],
@@ -53,6 +53,82 @@ function Footer({ scrollToSection }) {
         {/* Sections Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {[...footerSectionsCompany, ...footerSectionsUserGuide].map((section, index) => (
+        {/* Mobile & Tablet Accordion Layout */}
+        <div className="block md:hidden">
+          {footerSectionsCompany.map((section, index) => (
+            <div key={index} className="border-b border-gray-700">
+              <button
+                onClick={() => toggleSection(section.title)}
+                className="w-full text-left py-4 flex justify-between items-center"
+              >
+                <span className="font-bold">{section.title}</span>
+                <span>{openSection === section.title ? "−" : "+"}</span>
+              </button>
+              <AnimatePresence>
+                {openSection === section.title && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <ul className="pb-4 space-y-2">
+                      {section.items.map((item, itemIndex) => (
+                        <li key={itemIndex}>
+                          <a
+                            className="text-sm text-gray-300 hover:text-white"
+                            // onClick={() => scrollToSection(item.link)}
+                            href="instagram.com"
+                          >
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+          {footerSectionsUserGuide.map((section, index) => (
+            <div key={index} className="border-b border-gray-700">
+              <button
+                onClick={() => toggleSection(section.title)}
+                className="w-full text-left py-4 flex justify-between items-center"
+              >
+                <span className="font-bold">{section.title}</span>
+                <span>{openSection === section.title ? "−" : "+"}</span>
+              </button>
+              <AnimatePresence>
+                {openSection === section.title && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <ul className="pb-4 space-y-2">
+                      {section.items.map((item, itemIndex) => (
+                        <li key={itemIndex}>
+                          <a
+                            href={item.link}
+                            className="text-sm text-gray-300 hover:text-white"
+                          >
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden md:grid grid-cols-3 gap-8 mb-8 md:ml-5 lg:ml-8">
+          {footerSectionsCompany.map((section, index) => (
             <div key={index}>
               <h4 className="text-lg font-bold mb-4">{section.title}</h4>
               <ul className="space-y-2">
