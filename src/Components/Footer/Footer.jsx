@@ -15,7 +15,7 @@ function Footer({ scrollToSection }) {
   const contacts = [
     { gambar: instagram, link: "https://www.instagram.com/unteyojourney?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", name: "Instagram" },
     { gambar: tiktok, link: "https://www.tiktok.com/@unteyo.journey?_t=ZS-8w65xIKnw9v&_r=1", name: "TikTok" },
-    { gambar: youtube, link: "https://www.youtube.com/@UnteyoJourney", name: "YouTube" },
+    { gambar: youtube, link: "https://www.youtube.com/@UnteyoJourney", name: "" },
   ];
 
   const footerSectionsCompany = [
@@ -23,8 +23,8 @@ function Footer({ scrollToSection }) {
       title: "Company",
       items: [
         { name: "About Us", link: "/#/AboutUs" },
-        { name: "Program", link: "program" },
-        { name: "Contact Us", link: "connect" },
+        { name: "Program", link: "/#/Program" },
+        { name: "Contact Us", link: "/#/ContactUs" },
       ],
     },
   ];

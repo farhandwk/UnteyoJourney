@@ -198,7 +198,7 @@ function AboutUs() {
             pr-[16px]
             flex flex-row gap-[30px]
             
-            md:flex-wrap md:h-[900px] md:w-[800px]
+            md:flex-wrap md:h-auto md:w-[800px]
             md:justify-around md:items-center
             
             lg:flex-wrap lg:h-auto lg:w-[1100px]
@@ -264,19 +264,20 @@ function AboutUs() {
             <div className=' flex flex-col
             
             md:flex-row md:w-full md:flex-wrap
-            md:items-center md:justify-center md:gap-[40px]
+            md:items-start md:justify-center md:gap-[40px]
             
             lg:flex-row lg:w-[80%] lg:flex-wrap
             lg:items-center lg:justify-center lg:gap-[40px]
             '>
                 {ourStory.map((item) => (
-                <div key={item.id} className='
-                flex flex-col items-center gap-[10px]
+                <div key={item.id} className={`
+                    flex flex-col items-center gap-[10px]
 
-                md:w-[220px]
-                
-                lg:w-[420px]
-                '>
+                    ${item.id == 4 
+                    ? 'md:w-full lg:w-[420px]' // Kelas untuk item TERAKHIR
+                    : 'md:w-[220px] lg:w-[420px]' // Kelas untuk item LAINNYA
+                    }
+                `}>
                     <h4 className='
                     HelveticaBold text-[17px]
 
@@ -335,7 +336,7 @@ function AboutUs() {
         </div>
         <div className='
         text-[white] p-[20px] flex flex-col items-center gap-[40px] pt-[40px]
-        mt-[100px]
+        mt-[100px] 
         '>
             <h3 className='
             HelveticaBold text-[25px]
@@ -348,7 +349,7 @@ function AboutUs() {
             <div className='
             scrollbar-hide
             h-[500px] overflow-scroll
-            flex flex-col 
+            flex flex-col p-[20px]
 
             md:flex-row md:items-center md:justify-center
             md:gap-[40px] md:h-[700px]
