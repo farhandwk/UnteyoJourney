@@ -13,9 +13,9 @@ function Footer({ scrollToSection }) {
   };
 
   const contacts = [
-    { gambar: instagram, link: "https://www.instagram.com/unteyojourney", name: "Instagram" },
-    { gambar: tiktok, link: "https://www.tiktok.com/@unteyo.journey", name: "TikTok" },
-    { gambar: youtube, link: "#Youtube", name: "YouTube" },
+    { gambar: instagram, link: "https://www.instagram.com/unteyojourney?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", name: "Instagram" },
+    { gambar: tiktok, link: "https://www.tiktok.com/@unteyo.journey?_t=ZS-8w65xIKnw9v&_r=1", name: "TikTok" },
+    { gambar: youtube, link: "https://www.youtube.com/@UnteyoJourney", name: "YouTube" },
   ];
 
   const footerSectionsCompany = [
@@ -42,7 +42,11 @@ function Footer({ scrollToSection }) {
   ];
 
   return (
-    <footer id="connect" className="bg-gradient-to-br from-[#000] to-[#16213e] text-white">
+    <footer id="connect" className="relative bg-gradient-to-br from-[#000] to-[#16213e] text-white">
+      <div
+      className="absolute h-[25%] top-0 left-0 right-0 bg-gradient-to-b from-[#000] to-transparent pointer-events-none"
+      aria-hidden="true"
+    ></div>
       <div className="container mx-auto px-4 py-8">
         {/* Logo and Description */}
         <div className="text-center mb-6">

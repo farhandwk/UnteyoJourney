@@ -56,12 +56,16 @@ function Halaman6() {
           transition={{ duration: 0.8 }}
           className="relative mb-12 flex justify-center"
         >
-          <div className="w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+          <div className="image-wrapper relative w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
             <img
               src={anggotabaru}
               alt="Team Members"
               className="w-full object-cover"
             />
+            <div 
+            className="absolute bottom-0 left-0 right-0 h-[85%] bg-gradient-to-t from-black to-transparent"
+            aria-hidden="true" 
+          />
           </div>
         </motion.div>
 
@@ -121,9 +125,9 @@ function Halaman6() {
 
         {/* Desktop Blobs */}
         <div className="hidden lg:block">
-          <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-[#b22e15]/30 rounded-full blur-3xl animate-blob-lg"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#e0c39f]/30 rounded-full blur-3xl animate-blob-lg animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-[#d67e45]/30 rounded-full blur-3xl animate-blob-lg animation-delay-4000"></div>
+          <div className="absolute top-1/4 left-[30%] w-80 h-80 bg-[#b22e15]/30 rounded-full blur-3xl animate-blob-lg"></div>
+          <div className="absolute bottom-[40%] right-[35%] w-60 h-60 bg-[#e0c39f]/30 rounded-full blur-3xl animate-blob-lg animation-delay-2000"></div>
+          <div className="absolute top-[40%] right-[35%] w-60 h-60 bg-[#d67e45]/30 rounded-full blur-3xl animate-blob-lg animation-delay-4000"></div>
         </div>
       </div>
     </div>
