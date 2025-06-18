@@ -4,8 +4,13 @@ import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import dummyGambar from "../../assets/Post/Post1.png"
 import atun from "../../assets/atun no bg.png"
+import Adit from "../../assets/Team/Adit.png"
+import Chrisnu from "../../assets/Team/Chrisnu.png"
+import Bagus from"../../assets/Team/Bagus.png"
+import Farhan from "../../assets/Team/Farhan'.png"
+import Luthfi from "../../assets/Team/Luthfi.png"
+import Frederika from "../../assets/Team/Frederika.png"
 import dummy2 from "../../assets/dummy.jpg"
-import hapus from "../../assets/hapus.png"
 
 function AboutUs() {
     const coreValues = [
@@ -34,12 +39,61 @@ function AboutUs() {
         {id: '2', title: 'An Ecosystem for Creation & Impact', text: 'We are more than a media platform; we are a thriving ecosystem for empowerment. We provide a dedicated creative outlet that encourages you to move beyond passive learning. Here, you can access resources, showcase your projects, and collaborate with peers in a supportive environment focused on turning your potential into real-world impact.'},
         {id: '3', title: 'Actionable Content & Engaging Events', text: 'We bridge the gap between theoretical knowledge and real-world application. We consistently produce high-quality content and facilitate interactive events, such as workshops and webinars, that are curated to be both inspiring and practical. These opportunities provide a dynamic space to connect with experts and apply your learning to tangible challenges'},
     ]
+    // --- DATA PIMPINAN ---
+    const leadersData = [
+    {
+        id: 1,
+        name: 'Adithiyo Indra Kusuma Budi Saputro',
+        title: 'Chief Operating Officer',
+        description: 'The operational maestro who turns our strategic vision into reality. He architects our processes for scale, ensuring the company engine runs flawlessly to drive sustainable growth.',
+        imageUrl: Adit,
+        dotColor: '#3b82f6', // Biru
+    },
+    {
+        id: 2,
+        name: 'Chrisnu Firmansyah',
+        title: 'Chief Creative Officer',
+        description: 'As the guardian of our brands identity, he crafts the creative vision that defines who we are. He is the chief storyteller, shaping everything from our visual language to the user journey.',
+        imageUrl: Chrisnu,
+        dotColor: '#22c55e', // Hijau
+    },
+    ];
 
-    const ourTeam = [
-        {id: '1', img: hapus, title: 'Anggur Merah', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. '},
-        {id: '2', img: hapus, title: 'Kawa Kawa', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. '},
-        {id: '3', img: hapus, title: 'Iceland', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. '},
-    ]
+    // --- DATA ANGGOTA TIM ---
+    const membersData = [
+        {
+            id: 3,
+            name: 'Tubagus Pambudi',
+            title: 'Creative Lead',
+            description: 'The captain of our creative squad, guiding projects from initial concept to brilliant execution. He champions innovative design and inspires the team to deliver work that wows.',
+            imageUrl: Bagus,
+            dotColor: '#ef4444', // Merah
+        },
+        {
+            id: 4,
+            name: 'Lutfiah Dwi Fitriani',
+            title: 'Co-Creative Lead',
+            description: 'A core force in our creative leadership, she co-pilots our design initiatives with a passion for collaboration and a sharp eye for detail, ensuring every pixel has a purpose.',
+            imageUrl: Luthfi,
+            dotColor: '#eab308', // Kuning
+        },
+        {
+            id: 5,
+            name: 'Frederika Angelina Aditya Priska',
+            title: 'Co-Creative Lead',
+            description: 'Driving our creative synergy, she co-leads the charge on key projects, blending artistic flair with strategic thinking to create designs that resonate and convert.',
+            imageUrl: Frederika,
+            dotColor: '#8b5cf6', // Ungu
+        },
+        {
+            id: 6,
+            name: 'Farhan Dwiki Ardhani',
+            title: 'Web Developer Lead',
+            description: 'The lead architect behind our digital experiences. He translates cutting-edge designs into clean, scalable, and high-performance code, building the platforms that connect us with the world.',
+            imageUrl: Farhan,
+            dotColor: '#f97316', // Oranye
+        },
+    ];
 
     const testimonials = [
         {id: '1', img: atun, title: 'Mamat Beceng', position: 'PT. Mencari Cinta Sejati', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit.'},
@@ -445,33 +499,77 @@ function AboutUs() {
             >
                 Our Team
             </h3>
-            <div className='
-            flex flex-row flex-wrap justify-around gap-[20px]
+            {/* --- BAGIAN PIMPINAN --- */}
+            <div className="flex flex-col justify-center gap-x-8 gap-y-16 mt-16 mb-20
+            w-[80%]
 
-            md:w-[90%]
-            
-            lg:w-[70%]
-            '>
-                {ourTeam.map((item) => (
-                <div key={item.id} className='
-                flex flex-col items-center
-                w-[150px] lg:w-[200px]
-                '>
-                    <img className='
-                    w-[150px]
-                    ' src={item.img}></img>
-                    <h4 className='
-                    HelveticaBold text-[18px]
+            lg:flex-row
+            ">
+                {leadersData.map((leader) => (
+                <div key={leader.id} className="flex flex-col items-center text-center">
+                    <img
+                    className="h-40 w-40 rounded-full object-cover border-4 border-gray-800"
+                    src={leader.imageUrl}
+                    alt={`Profile of ${leader.name}`}
 
-                    lg:text-[25px]
-                    '>{item.title}</h4>
-                    <p className='
-                    Helvetica text-[13px] text-justify
-
-                    lg:text-lg
-                    '>{item.text}</p>
+                    style={{
+                        // Tumpukan beberapa bayangan untuk efek glow
+                        boxShadow: `
+                        0 0 5px rgba(255, 255, 255, 0.1),
+                        0 0 10px rgba(255, 200, 150, 0.25),
+                        0 0 20px rgba(255, 200, 150, 0.5),
+                        0 0 35px rgba(255, 200, 150, 0.7)
+                        `
+                    }}
+                    />
+                    <div className="mt-6
+                    ">
+                    <p className="Helvetica text-[20px] text-white">{leader.title}</p>
+                    <h3 className="HelveticaBold text-[25px] leading-7 tracking-tight text-white mt-1">
+                        {leader.name}
+                    </h3>
+                    <p className="Helvetica text-[20px] text-gray-400 mt-2">
+                        {leader.description}
+                    </p>
+                    </div>
                 </div>
-            ))}
+                ))}
+            </div>
+            
+            {/* Garis Pemisah */}
+            <hr className="border-gray-700 w-1/2 mx-auto" />
+
+            {/* --- BAGIAN ANGGOTA TIM --- */}
+            {/* JSX Kartu juga ada langsung di dalam .map() ini */}
+            <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-4 mt-20 p-[20px]">
+                {membersData.map((member) => (
+                <div key={member.id} className="flex flex-col items-center text-center">
+                    <img
+                    className="h-40 w-40 rounded-full object-cover border-4 border-gray-800"
+                    src={member.imageUrl}
+                    alt={`Profile of ${member.name}`}
+
+                    style={{
+                        // Tumpukan beberapa bayangan untuk efek glow
+                        boxShadow: `
+                        0 0 5px rgba(255, 255, 255, 0.1),
+                        0 0 10px rgba(255, 200, 150, 0.25),
+                        0 0 20px rgba(255, 200, 150, 0.5),
+                        0 0 35px rgba(255, 200, 150, 0.7)
+                        `
+                    }}
+                    />
+                    <div className="mt-6">
+                    <p className="Helvetica text-[20px] text-white">{member.title}</p>
+                    <h3 className="HelveticaBold text-[25px] leading-7 tracking-tight text-white mt-1">
+                        {member.name}
+                    </h3>
+                    <p className="Helvetica text-[20px] text-gray-400 mt-2">
+                        {member.description}
+                    </p>
+                    </div>
+                </div>
+                ))}
             </div>
         </div>
         <div className='
