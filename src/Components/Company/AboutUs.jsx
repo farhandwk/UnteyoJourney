@@ -4,41 +4,96 @@ import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import dummyGambar from "../../assets/Post/Post1.png"
 import atun from "../../assets/atun no bg.png"
+import Adit from "../../assets/Team/Adit.png"
+import Chrisnu from "../../assets/Team/Chrisnu.png"
+import Bagus from"../../assets/Team/Bagus.png"
+import Farhan from "../../assets/Team/Farhan'.png"
+import Luthfi from "../../assets/Team/Luthfi.png"
+import Frederika from "../../assets/Team/Frederika.png"
 import dummy2 from "../../assets/dummy.jpg"
 
 function AboutUs() {
     const coreValues = [
-        {id: '1', img: atun, title: 'Inovation', text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'},
-        {id: '2', img: atun, title: 'Inovation', text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'},
-        {id: '2', img: atun, title: 'Inovation', text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'},
-        {id: '2', img: atun, title: 'Inovation', text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'},
-        {id: '2', img: atun, title: 'Inovation', text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'}
+        {id: '1', img: atun, title: 'Empowerment', text: 'We are dedicated to providing students with the tools, confidence, and resources to take ownership of their personal and professional growth.'},
+        {id: '2', img: atun, title: 'Innovation & Creativity', text: 'We champion new ideas and provide creative outlets  that encourage students to challenge the status quo and pioneer fresh solutions.'},
+        {id: '2', img: atun, title: 'Holistic Development', text: 'We believe in nurturing the whole person by addressing both academic and non-academic issues, fostering well-rounded and resilient individuals.'},
+        {id: '2', img: atun, title: 'Critical & Design Thinking', text: 'We promote a structured yet creative approach to thinking, enabling students to deconstruct complex problems and design effective solutions.'},
+        {id: '2', img: atun, title: 'Real-World Impact', text: 'We are focused on practical application and problem-solving, turning learning and ideas into tangible actions that create real change.'}
     ]
 
     const ourStory = [
-        {id: '1', title: 'Our Begining', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. Aenean feugiat magna erat, nec mollis lacus laoreet vel. Suspendisse sit amet lobortis felis. Mauris egestas, est ut fringilla gravida, diam dolor tincidunt est, ut accumsan dolor est vitae ante. Pellentesque sit amet tristique neque, a accumsan erat. Maecenas scelerisque convallis vestibulum. Donec in nibh sed sapien aliquam tincidunt.'},
-        {id: '2', title: 'Our Core Believes', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. Aenean feugiat magna erat, nec mollis lacus laoreet vel. Suspendisse sit amet lobortis felis. Mauris egestas, est ut fringilla gravida, diam dolor tincidunt est, ut accumsan dolor est vitae ante. Pellentesque sit amet tristique neque, a accumsan erat. Maecenas scelerisque convallis vestibulum. Donec in nibh sed sapien aliquam tincidunt.'},
-        {id: '3', title: 'Our Purpose', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. Aenean feugiat magna erat, nec mollis lacus laoreet vel. Suspendisse sit amet lobortis felis. Mauris egestas, est ut fringilla gravida, diam dolor tincidunt est, ut accumsan dolor est vitae ante. Pellentesque sit amet tristique neque, a accumsan erat. Maecenas scelerisque convallis vestibulum. Donec in nibh sed sapien aliquam tincidunt.'},
-        {id: '4', title: 'Our Future', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. Aenean feugiat magna erat, nec mollis lacus laoreet vel. Suspendisse sit amet lobortis felis. Mauris egestas, est ut fringilla gravida, diam dolor tincidunt est, ut accumsan dolor est vitae ante. Pellentesque sit amet tristique neque, a accumsan erat. Maecenas scelerisque convallis vestibulum. Donec in nibh sed sapien aliquam tincidunt.'},
+        {id: '1', title: 'Our Begining', text: 'Unteyo Journey began with a group of students who were deeply concerned by certain behaviors on campus that reflected a need for greater personal and professional development. They saw these actions as a symptom of a larger issue: a critical gap in the cultivation of skills and mindsets essential for becoming high-caliber human resources. This realization sparked a commitment to build a platform dedicated to elevating student potential from the ground up.'},
+        {id: '2', title: 'Our Core Believes', text: 'We believe every student possesses a wealth of potential waiting to be unlocked. We believe in a holistic approach to development that addresses both academic and non-academic issues affecting students. We hold that critical thinking and design thinking are fundamental skills for solving modern problems, and that quality, accessible content can inspire tangible, real-world action.'},
+        {id: '3', title: 'Our Purpose', text: 'Our purpose is to be a dedicated student empowerment media platform. We provide the information, resources, and creative outlets necessary to transform passive media consumption into an active journey of self-development. We exist to equip students with the tools they need to navigate their challenges and create a strong foundation for their future.'},
+        {id: '4', title: 'Our Future', text: 'We envision a future where Unteyo Journey is more than a platform—it is a thriving ecosystem. Our goal is to expand our reach and resources, fostering a dynamic community where students not only consume information but also collaborate to create real solutions for the world around them. By shaping this generation of innovators and problem-solvers, we are actively contributing to the development of superior human resources needed to realize the national vision of Indonesian Golden Age of 2045.'},
     ]
 
     const whatweDo = [
-        {id: '1', img: atun, title: 'Providing Information and Resources', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. Aenean feugiat magna erat, nec mollis lacus laoreet vel. Suspendisse sit amet lobortis felis. Mauris egestas, est ut fringilla gravida, diam dolor tincidunt est, ut accumsan dolor est vitae ante. Pellentesque sit amet tristique neque, a accumsan erat. Maecenas scelerisque convallis vestibulum. Donec in nibh sed sapien aliquam tincidunt.'},
-        {id: '2', img: atun, title: 'Providing Information and Resources', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. Aenean feugiat magna erat, nec mollis lacus laoreet vel. Suspendisse sit amet lobortis felis. Mauris egestas, est ut fringilla gravida, diam dolor tincidunt est, ut accumsan dolor est vitae ante. Pellentesque sit amet tristique neque, a accumsan erat. Maecenas scelerisque convallis vestibulum. Donec in nibh sed sapien aliquam tincidunt.'},
-        {id: '3', img: atun, title: 'Providing Information and Resources', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. Aenean feugiat magna erat, nec mollis lacus laoreet vel. Suspendisse sit amet lobortis felis. Mauris egestas, est ut fringilla gravida, diam dolor tincidunt est, ut accumsan dolor est vitae ante. Pellentesque sit amet tristique neque, a accumsan erat. Maecenas scelerisque convallis vestibulum. Donec in nibh sed sapien aliquam tincidunt.'},
+        {id: '1', img: atun, title: 'Curating Insightful Content', text: 'We consistently produce and share high-quality content, from in-depth articles to practical guides. Our topics are curated to cover the full student experience, addressing both academic and non-academic issues  while providing relevant knowledge and actionable resources for self-development.'},
+        {id: '2', img: atun, title: 'Facilitating Engaging Eventss', text: 'We regularly organize events, such as workshops, webinars, and discussions, designed to be interactive and inspiring. These gatherings provide a dynamic space for students to practice critical and design thinking, connect with peers and experts, and apply their learning to real-world challenges.'},
+        {id: '3', img: atun, title: 'Building an Empowerment Creative Platform', text: 'Beyond content and events, we provide a dedicated creative media platform that functions as a creative outlet for students. It’s an ecosystem where our community can access resources, showcase their projects, and engage in a supportive environment focused on turning potential into tangible impact.'},
     ]
 
     const whychooseUs = [
-        {id: '1', title: 'Providing Information and Resources', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. Aenean feugiat magna erat, nec mollis lacus laoreet vel. Suspendisse sit amet lobortis felis. Mauris egestas, est ut fringilla gravida, diam dolor tincidunt est, ut accumsan dolor est vitae ante. Pellentesque sit amet tristique neque, a accumsan erat. Maecenas scelerisque convallis vestibulum. Donec in nibh sed sapien aliquam tincidunt.'},
-        {id: '2', title: 'Providing Information and Resources', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. Aenean feugiat magna erat, nec mollis lacus laoreet vel. Suspendisse sit amet lobortis felis. Mauris egestas, est ut fringilla gravida, diam dolor tincidunt est, ut accumsan dolor est vitae ante. Pellentesque sit amet tristique neque, a accumsan erat. Maecenas scelerisque convallis vestibulum. Donec in nibh sed sapien aliquam tincidunt.'},
-        {id: '3', title: 'Providing Information and Resources', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. Aenean feugiat magna erat, nec mollis lacus laoreet vel. Suspendisse sit amet lobortis felis. Mauris egestas, est ut fringilla gravida, diam dolor tincidunt est, ut accumsan dolor est vitae ante. Pellentesque sit amet tristique neque, a accumsan erat. Maecenas scelerisque convallis vestibulum. Donec in nibh sed sapien aliquam tincidunt.'},
+        {id: '1', title: 'Holistic & Purpose-Driven Development', text: 'We look beyond academic scores to focus on your complete personal and professional growth. Our platform is intentionally designed to address the full spectrum of the student experience—both academic and non-academic—while instilling the critical thinking and design thinking skills essential for becoming a high-caliber professional in the modern world.'},
+        {id: '2', title: 'An Ecosystem for Creation & Impact', text: 'We are more than a media platform; we are a thriving ecosystem for empowerment. We provide a dedicated creative outlet that encourages you to move beyond passive learning. Here, you can access resources, showcase your projects, and collaborate with peers in a supportive environment focused on turning your potential into real-world impact.'},
+        {id: '3', title: 'Actionable Content & Engaging Events', text: 'We bridge the gap between theoretical knowledge and real-world application. We consistently produce high-quality content and facilitate interactive events, such as workshops and webinars, that are curated to be both inspiring and practical. These opportunities provide a dynamic space to connect with experts and apply your learning to tangible challenges'},
     ]
+    // --- DATA PIMPINAN ---
+    const leadersData = [
+    {
+        id: 1,
+        name: 'Adithiyo Indra Kusuma Budi Saputro',
+        title: 'Chief Operating Officer',
+        description: 'The operational maestro who turns our strategic vision into reality. He architects our processes for scale, ensuring the company engine runs flawlessly to drive sustainable growth.',
+        imageUrl: Adit,
+        dotColor: '#3b82f6', // Biru
+    },
+    {
+        id: 2,
+        name: 'Chrisnu Firmansyah',
+        title: 'Chief Creative Officer',
+        description: 'As the guardian of our brands identity, he crafts the creative vision that defines who we are. He is the chief storyteller, shaping everything from our visual language to the user journey.',
+        imageUrl: Chrisnu,
+        dotColor: '#22c55e', // Hijau
+    },
+    ];
 
-    const ourTeam = [
-        {id: '1', img: atun, title: 'Aceng', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. '},
-        {id: '2', img: atun, title: 'Aceng', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. '},
-        {id: '3', img: atun, title: 'Aceng', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. '},
-    ]
+    // --- DATA ANGGOTA TIM ---
+    const membersData = [
+        {
+            id: 3,
+            name: 'Tubagus Pambudi',
+            title: 'Creative Lead',
+            description: 'The captain of our creative squad, guiding projects from initial concept to brilliant execution. He champions innovative design and inspires the team to deliver work that wows.',
+            imageUrl: Bagus,
+            dotColor: '#ef4444', // Merah
+        },
+        {
+            id: 4,
+            name: 'Lutfiah Dwi Fitriani',
+            title: 'Co-Creative Lead',
+            description: 'A core force in our creative leadership, she co-pilots our design initiatives with a passion for collaboration and a sharp eye for detail, ensuring every pixel has a purpose.',
+            imageUrl: Luthfi,
+            dotColor: '#eab308', // Kuning
+        },
+        {
+            id: 5,
+            name: 'Frederika Angelina Aditya Priska',
+            title: 'Co-Creative Lead',
+            description: 'Driving our creative synergy, she co-leads the charge on key projects, blending artistic flair with strategic thinking to create designs that resonate and convert.',
+            imageUrl: Frederika,
+            dotColor: '#8b5cf6', // Ungu
+        },
+        {
+            id: 6,
+            name: 'Farhan Dwiki Ardhani',
+            title: 'Web Developer Lead',
+            description: 'The lead architect behind our digital experiences. He translates cutting-edge designs into clean, scalable, and high-performance code, building the platforms that connect us with the world.',
+            imageUrl: Farhan,
+            dotColor: '#f97316', // Oranye
+        },
+    ];
 
     const testimonials = [
         {id: '1', img: atun, title: 'Mamat Beceng', position: 'PT. Mencari Cinta Sejati', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit.'},
@@ -87,7 +142,7 @@ function AboutUs() {
 
         lg:mt-[120px]
         '>
-            <h3 className='HelveticaBold text-[white] text-[25px]'>About Us</h3>
+            <h3 className='HelveticaBold text-[white] text-[25px] lg:text-[40px] mb-[50px]'>About Us</h3>
             <div className='
             flex flex-col items-center p-[20px]
             gap-[40px]
@@ -101,13 +156,13 @@ function AboutUs() {
                 <div className='flex flex-row gap-[20px]
             '>
                 <img src={dummyGambar} className='
-                w-[100px] lg:w-[150px]
+                w-[100px] lg:w-[200px]
                 '></img>
                 <img src={dummyGambar} className='
-                w-[100px] lg:w-[150px]
+                w-[100px] lg:w-[200px]
                 '></img>
                 <img src={dummyGambar} className='
-                w-[100px] lg:w-[150px]
+                w-[100px] lg:w-[200px]
                 '></img>
             </div>
             <div className='HelveticaBold text-[white] p-[22px]
@@ -118,18 +173,21 @@ function AboutUs() {
             lg:w-[55%]
             '>
                 <h4 className='text-[25px]'>What Is Unteyo Journey?</h4>
-                <p className='text-[15px]'>
+                <p className='text-lg'>
                     Part of the Hubung Group, it is a student empowerment media platform, providing information, resources, and creative outlets that encourage critical thinking, design thinking, and self-development.
                 </p>
-                <p className='text-[15px]'>
+                <p className='text-lg'>
                     Addresses academic and non-academic issues affecting students, with a focus on problem solving and creating real impact.
                 </p>
             </div>
             </div>
         </div>
-        <div className='flex flex-col items-center p-[20px] pt-[40px] gap-[40px]'>
+        <div className='flex flex-col items-center p-[20px] pt-[40px] gap-[40px] mt-[100px]'>
             <h3 className='HelveticaBold text-[white]
+            mb-[50px]
             text-[25px]
+
+            lg:text-[40px]
             '>Core Values</h3>
             <div className='
             scrollbar-hide
@@ -140,11 +198,11 @@ function AboutUs() {
             pr-[16px]
             flex flex-row gap-[30px]
             
-            md:flex-wrap md:h-[900px] md:w-[800px]
+            md:flex-wrap md:h-auto md:w-[800px]
             md:justify-around md:items-center
             
-            lg:flex-wrap lg:h-[1000px] lg:w-[1100px]
-            lg:justify-around lg:items-center
+            lg:flex-wrap lg:h-auto lg:w-[1100px]
+            lg:justify-around lg:items-center lg:overflow-none
             '>
                 {coreValues.map((item) => (
                     <div key={item.id} className='
@@ -158,17 +216,19 @@ function AboutUs() {
 
                     md:w-[200px] 
 
-                    lg:w-[250px]
+                    lg:w-[300px]
+                    lg:gap-[15px]
                     '>
                         <img src={item.img} className='
                         
                         '></img>
                         <h4 className='
                         HelveticaBold
-                        text-[25px] 
+                        text-[25px]
+                        text-center 
                         '>{item.title}</h4>
                         <p className='
-                        text-[13px]
+                        text-lg
                         '>{item.text}</p>
                     </div>
                 ))}
@@ -178,6 +238,7 @@ function AboutUs() {
         w-100% flex flex-col items-center
         p-[20px] pt-[40px]
         text-[white]
+        mt-[100px]
         gap-[40px]
 
         md:p-[30px] md:pt-[50px]
@@ -194,31 +255,37 @@ function AboutUs() {
         >
             <h3 className='
             HelveticaBold text-[25px]
+            mb-[50px]
+
+            lg:text-[40px]
             '>
                 Our Story
             </h3>
             <div className=' flex flex-col
             
             md:flex-row md:w-full md:flex-wrap
-            md:items-center md:justify-center md:gap-[40px]
+            md:items-start md:justify-center md:gap-[40px]
             
-            lg:flex-row lg:w-full lg:flex-wrap
+            lg:flex-row lg:w-[80%] lg:flex-wrap
             lg:items-center lg:justify-center lg:gap-[40px]
             '>
                 {ourStory.map((item) => (
-                <div key={item.id} className='
-                flex flex-col items-center gap-[10px]
+                <div key={item.id} className={`
+                    flex flex-col items-center gap-[10px]
 
-                md:w-[220px]
-                
-                lg:w-[380px]
-                '>
+                    ${item.id == 4 
+                    ? 'md:w-full lg:w-[420px]' // Kelas untuk item TERAKHIR
+                    : 'md:w-[220px] lg:w-[420px]' // Kelas untuk item LAINNYA
+                    }
+                `}>
                     <h4 className='
                     HelveticaBold text-[17px]
+
+                    lg:text-[25px]
                     '>{item.title}</h4>
                     <p className='
                     Helvetica
-                    text-[13px] text-justify
+                    text-lg text-justify
                     '>{item.text}</p>
                 </div>
             ))}
@@ -227,10 +294,14 @@ function AboutUs() {
         <div className='
         flex flex-col text-[white] items-center
         p-[30px] gap-[40px] pt-[40px]
+        mt-[100px]
         '>
             <h3 className='
             HelveticaBold
             text-[25px]
+            mb-[50px]
+
+            lg:text-[40px]
             '>
                 Target Audience
             </h3>
@@ -260,27 +331,31 @@ function AboutUs() {
                 
                 lg:text-[20px]
                 lg:w-[40%]
-                '>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo tortor sit amet eros ultricies, ac porta tortor blandit. Aenean feugiat magna erat, nec mollis lacus laoreet vel. Suspendisse sit amet lobortis felis. Mauris egestas, est ut fringilla gravida, diam dolor tincidunt est, ut accumsan dolor est vitae ante. Pellentesque sit amet tristique neque, a accumsan erat. Maecenas scelerisque convallis vestibulum. Donec in nibh sed sapien aliquam tincidunt</p>
+                '>Our platform is designed for proactive students, from those in higher education to individuals preparing for their university years. We cater to those who look beyond academic achievements and are actively seeking opportunities for self-development. Our ideal audience consists of forward-thinkers, creative problem-solvers, and future professionals who are eager to bridge the gap between theoretical knowledge and real-world application. Unteyo Journey is for every student who is ready to move beyond passive learning and take an active role in shaping their own future.</p>
             </div>
         </div>
         <div className='
         text-[white] p-[20px] flex flex-col items-center gap-[40px] pt-[40px]
+        mt-[100px] 
         '>
             <h3 className='
             HelveticaBold text-[25px]
+            mb-[50px]
+
+            lg:text-[40px]
             '>
                 What We Do?
             </h3>
             <div className='
             scrollbar-hide
             h-[500px] overflow-scroll
-            flex flex-col 
+            flex flex-col p-[20px]
 
             md:flex-row md:items-center md:justify-center
             md:gap-[40px] md:h-[700px]
             
             lg:flex-row lg:items-center lg:justify-center
-            lg:gap-[40px]
+            lg:gap-[40px] lg:h-auto
             '>
                 {whatweDo.map((item) => (
             // div ini adalah container untuk satu item lengkap (gambar + teks)
@@ -333,14 +408,14 @@ function AboutUs() {
                 {/* ===== AKHIR DARI DIV GLOW ===== */}
 
                 <h4 className='HelveticaBold text-[18px]'>{item.title}</h4>
-                <p className='Helvetica text-[15px] text-justify'>{item.text}</p>
+                <p className='Helvetica text-lg text-justify'>{item.text}</p>
             </div>
             ))}
             </div>
         </div>
         <div className='
         text-[white]
-        flex flex-col items-center gap-[40px] p-[20px] pt-[40px]
+        flex flex-col items-center gap-[40px] p-[20px] pt-[40px] mt-[100px]
         '
         style={{
                         backgroundImage: `url(${dummy2})`,
@@ -352,6 +427,9 @@ function AboutUs() {
         >
             <h3 className='
             HelveticaBold text-[25px]
+            mb-[50px]
+
+            lg:text-[40px]
             '>
                 Why Choose Us?
             </h3>
@@ -397,10 +475,12 @@ function AboutUs() {
                     <div key={item.id}>
                         <h4 className='
                         HelveticaBold
-                        text-[18px]
+                        text-[18px] lg:text-[23px]
                         '>{item.title}</h4>
                         <p className='
                         Helvetica text-[13px] text-justify
+
+                        lg:text-[18px]
                         '>{item.text}</p>
                     </div>
                 ))}
@@ -408,45 +488,100 @@ function AboutUs() {
             </div>
         </div>
         <div className='
-        text-[white] flex flex-col items-center p-[20px] gap-[40px] pt-[40px]
+        text-[white] flex flex-col items-center p-[20px] gap-[40px] pt-[40px] mt-[100px]
         '>
             <h3
             className='
             HelveticaBold text-[25px]
+            mb-[50px]
+
+            lg:text-[40px]
             '
             >
                 Our Team
             </h3>
-            <div className='
-            flex flex-row flex-wrap justify-around gap-[20px]
+            {/* --- BAGIAN PIMPINAN --- */}
+            <div className="flex flex-col justify-center gap-x-8 gap-y-16 mt-16 mb-20
+            w-[80%]
 
-            md:w-[90%]
-            
-            lg:w-[70%]
-            '>
-                {ourTeam.map((item) => (
-                <div key={item.id} className='
-                flex flex-col items-center
-                w-[150px]
-                '>
-                    <img className='
-                    w-[150px]
-                    ' src={item.img}></img>
-                    <h4 className='
-                    HelveticaBold text-[18px]
-                    '>{item.title}</h4>
-                    <p className='
-                    Helvetica text-[13px] text-justify
-                    '>{item.text}</p>
+            lg:flex-row
+            ">
+                {leadersData.map((leader) => (
+                <div key={leader.id} className="flex flex-col items-center text-center">
+                    <img
+                    className="h-40 w-40 rounded-full object-cover border-4 border-gray-800"
+                    src={leader.imageUrl}
+                    alt={`Profile of ${leader.name}`}
+
+                    style={{
+                        // Tumpukan beberapa bayangan untuk efek glow
+                        boxShadow: `
+                        0 0 5px rgba(255, 255, 255, 0.1),
+                        0 0 10px rgba(255, 200, 150, 0.25),
+                        0 0 20px rgba(255, 200, 150, 0.5),
+                        0 0 35px rgba(255, 200, 150, 0.7)
+                        `
+                    }}
+                    />
+                    <div className="mt-6
+                    ">
+                    <p className="Helvetica text-[20px] text-white">{leader.title}</p>
+                    <h3 className="HelveticaBold text-[25px] leading-7 tracking-tight text-white mt-1">
+                        {leader.name}
+                    </h3>
+                    <p className="Helvetica text-[20px] text-gray-400 mt-2">
+                        {leader.description}
+                    </p>
+                    </div>
                 </div>
-            ))}
+                ))}
+            </div>
+            
+            {/* Garis Pemisah */}
+            <hr className="border-gray-700 w-1/2 mx-auto" />
+
+            {/* --- BAGIAN ANGGOTA TIM --- */}
+            {/* JSX Kartu juga ada langsung di dalam .map() ini */}
+            <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-4 mt-20 p-[20px]">
+                {membersData.map((member) => (
+                <div key={member.id} className="flex flex-col items-center text-center">
+                    <img
+                    className="h-40 w-40 rounded-full object-cover border-4 border-gray-800"
+                    src={member.imageUrl}
+                    alt={`Profile of ${member.name}`}
+
+                    style={{
+                        // Tumpukan beberapa bayangan untuk efek glow
+                        boxShadow: `
+                        0 0 5px rgba(255, 255, 255, 0.1),
+                        0 0 10px rgba(255, 200, 150, 0.25),
+                        0 0 20px rgba(255, 200, 150, 0.5),
+                        0 0 35px rgba(255, 200, 150, 0.7)
+                        `
+                    }}
+                    />
+                    <div className="mt-6">
+                    <p className="Helvetica text-[20px] text-white">{member.title}</p>
+                    <h3 className="HelveticaBold text-[25px] leading-7 tracking-tight text-white mt-1">
+                        {member.name}
+                    </h3>
+                    <p className="Helvetica text-[20px] text-gray-400 mt-2">
+                        {member.description}
+                    </p>
+                    </div>
+                </div>
+                ))}
             </div>
         </div>
         <div className='
         text-[white] flex flex-col items-center p-[20px] gap-[40px] pt-[40px]
+        mt-[100px]
         '>
             <h3 className='
             HelveticaBold text-[25px]
+            mb-[50px]
+
+            lg:text-[40px]
             '>Testimonials</h3>
             <div className='
             flex flex-col items-center gap-[50px]
@@ -478,12 +613,13 @@ function AboutUs() {
                         '>
                             <h4 className='
                             HelveticaBold text-[18px]
+                            lg:text-[20px]
                             '>{item.title}</h4>
                             <h5 className='
-                            HelveticaBold text-[15px]
+                            HelveticaBold text-lg
                             '>{item.position}</h5>
                             <p className='
-                            Helvetica text-[13px] text-justify
+                            Helvetica text-[15px] text-justify
                             '>{item.text}</p>
                         </div>
                     </div>

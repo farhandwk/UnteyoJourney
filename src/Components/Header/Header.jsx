@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from "../../assets/logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -61,7 +62,8 @@ function Header({ scrollToSection }) {
         </ul>
 
         {/* Logo */}
-        <img 
+        <Link to="/">
+          <img 
           src={logo}
           className="
             w-[73.98px] h-[80px] relative top-[-22px]
@@ -70,6 +72,7 @@ function Header({ scrollToSection }) {
           "
           alt="Logo"
         />
+        </Link>
       </div>
 
       {/* Mobile Navbar */}

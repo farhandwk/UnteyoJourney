@@ -52,10 +52,20 @@ function ContactUs() {
                         transition-transform 
                         duration-300 
                         hover:scale-110" />
-                <p>Unteyojourney@gmail.com</p>
+                <p className="text-xs md:text-sm">Unteyojourney@gmail.com</p>
                 <a
                     href="mailto:unteyojourney@gmail.com"
-                    className="bg-white text-black px-4 py-2 rounded-full text-sm font-bold inline-block hover:bg-gray-200 hover:scale-105 transition duration-300 "
+                    className="
+                      bg-white 
+                      text-black 
+                      px-4 py-2 
+                      rounded-full 
+                      text-sm 
+                      font-bold 
+                      inline-block 
+                      hover:bg-gray-200 
+                      hover:scale-105 
+                      transition duration-300"
                     >
                     LET'S GO...
                 </a>
@@ -77,7 +87,7 @@ function ContactUs() {
                 />
                 <p>Min Un</p>
                  <a
-                     href="https://wa.me/6287832163618"
+                     href="https://api.whatsapp.com/send/?phone=6287832163618&text=Hallo%20Admin&type=phone_number&app_absent=0"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white text-black px-4 py-2 rounded-full text-sm font-bold inline-block hover:bg-gray-200 hover:scale-105 transition duration-300"
