@@ -272,7 +272,7 @@ function Program() {
                         lg:text-[40px]
                         text-center
                     ">
-                        Dive into Our Programs
+                        Dive Into Our Programs
                     </h2>
 
                     {/* <div className="bg-[#222] px-4 py-3 gap-2 rounded-xl flex flex-wrap justify-center w-fit mb-[75px] md:px-8 md:gap-10">
