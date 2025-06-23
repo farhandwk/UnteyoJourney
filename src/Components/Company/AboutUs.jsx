@@ -10,15 +10,27 @@ import Bagus from"../../assets/Team/Bagus.png"
 import Farhan from "../../assets/Team/Farhan'.png"
 import Luthfi from "../../assets/Team/Luthfi.png"
 import Frederika from "../../assets/Team/Frederika.png"
+import DOCSBG from "../../assets/DOCS 1/DOCSBG.JPG"
+import DOCS1 from "../../assets/DOCS 1/DOCS1.png"
+import DOCS2 from "../../assets/DOCS 1/DOCS2.jpg"
+import DOCS3 from "../../assets/DOCS 1/DOCS3.png"
+import DOCS4_1 from "../../assets/DOCS 1/DOCS4-1.png"
+import DOCS4_2 from "../../assets/DOCS 1/DOCS4-2.png"
+import DOCS4_3 from "../../assets/DOCS 1/DOCS4-3.png"
+import Empowerment from "../../assets/CoreVaues/Empowerment.png"
+import Creativity from "../../assets/CoreVaues/Creativity.png"
+import Holistic from "../../assets/CoreVaues/Holistic.png"
+import Think from "../../assets/CoreVaues/Think.png"
+import Impact from "../../assets/CoreVaues/Impact.png"
 import dummy2 from "../../assets/dummy.jpg"
 
 function AboutUs() {
     const coreValues = [
-        {id: '1', img: atun, title: 'Empowerment', text: 'We are dedicated to providing students with the tools, confidence, and resources to take ownership of their personal and professional growth.'},
-        {id: '2', img: atun, title: 'Innovation & Creativity', text: 'We champion new ideas and provide creative outlets  that encourage students to challenge the status quo and pioneer fresh solutions.'},
-        {id: '2', img: atun, title: 'Holistic Development', text: 'We believe in nurturing the whole person by addressing both academic and non-academic issues, fostering well-rounded and resilient individuals.'},
-        {id: '2', img: atun, title: 'Critical & Design Thinking', text: 'We promote a structured yet creative approach to thinking, enabling students to deconstruct complex problems and design effective solutions.'},
-        {id: '2', img: atun, title: 'Real-World Impact', text: 'We are focused on practical application and problem-solving, turning learning and ideas into tangible actions that create real change.'}
+        {id: '1', img: Empowerment, title: 'Empowerment', text: 'We are dedicated to providing students with the tools, confidence, and resources to take ownership of their personal and professional growth.'},
+        {id: '2', img: Creativity, title: 'Innovation & Creativity', text: 'We champion new ideas and provide creative outlets  that encourage students to challenge the status quo and pioneer fresh solutions.'},
+        {id: '2', img: Holistic, title: 'Holistic Development', text: 'We believe in nurturing the whole person by addressing both academic and non-academic issues, fostering well-rounded and resilient individuals.'},
+        {id: '2', img: Think, title: 'Critical & Design Thinking', text: 'We promote a structured yet creative approach to thinking, enabling students to deconstruct complex problems and design effective solutions.'},
+        {id: '2', img: Impact, title: 'Real-World Impact', text: 'We are focused on practical application and problem-solving, turning learning and ideas into tangible actions that create real change.'}
     ]
 
     const ourStory = [
@@ -155,13 +167,13 @@ function AboutUs() {
             '>
                 <div className='flex flex-row gap-[20px]
             '>
-                <img src={dummyGambar} className='
+                <img src={DOCS4_1} className='
                 w-[100px] lg:w-[200px]
                 '></img>
-                <img src={dummyGambar} className='
+                <img src={DOCS4_2} className='
                 w-[100px] lg:w-[200px]
                 '></img>
-                <img src={dummyGambar} className='
+                <img src={DOCS4_3} className='
                 w-[100px] lg:w-[200px]
                 '></img>
             </div>
@@ -220,7 +232,7 @@ function AboutUs() {
                     lg:gap-[15px]
                     '>
                         <img src={item.img} className='
-                        
+                        rounded-[50%]
                         '></img>
                         <h4 className='
                         HelveticaBold
@@ -234,61 +246,64 @@ function AboutUs() {
                 ))}
             </div>
         </div>
-        <div className='
-        w-100% flex flex-col items-center
-        p-[20px] pt-[40px]
-        text-[white]
-        mt-[100px]
-        gap-[40px]
+        <div style={{
+                    backgroundImage: `url(${DOCSBG})`,
+                    backgroundSize: 'cover',        // Membuat gambar menutupi seluruh div tanpa merusak rasio aspek
+                    backgroundPosition: 'center',   // Memposisikan gambar di tengah
+                    backgroundRepeat: 'no-repeat',   // Mencegah gambar berulang jika ukurannya kecil
+                }}>
+            <div className='
+            w-100% flex flex-col items-center
+            p-[20px] pt-[40px]
+            text-[white]
+            mt-[100px]
+            gap-[40px]
 
-        md:p-[30px] md:pt-[50px]
-        
-        lg:p-[30px] lg:pt-[50px]
-        '
-        style={{
-                backgroundImage: `url(${dummyGambar})`,
-                backgroundSize: 'cover',        // Membuat gambar menutupi seluruh div tanpa merusak rasio aspek
-                backgroundPosition: 'center',   // Memposisikan gambar di tengah
-                backgroundRepeat: 'no-repeat',   // Mencegah gambar berulang jika ukurannya kecil
-                boxShadow: 'inset 0px 150px 120px -40px rgba(0, 0, 0, 1), inset 0px -150px 120px -40px rgba(0, 0, 0, 1)'
+            md:p-[30px] md:pt-[50px]
+            
+            lg:p-[30px] lg:pt-[50px]
+            '
+            style={{
+                backdropFilter: "blur(5px)",boxShadow: 'inset 0px 150px 120px -40px rgba(0, 0, 0, 1), inset 0px -150px 120px -40px rgba(0, 0, 0, 1)'
             }}
-        >
-            <h3 className='
-            HelveticaBold text-[25px]
-            mb-[50px]
+            >
+                <h3 className='
+                HelveticaBold text-[25px]
+                mb-[50px]
 
-            lg:text-[40px]
-            '>
-                Our Story
-            </h3>
-            <div className=' flex flex-col
-            
-            md:flex-row md:w-full md:flex-wrap
-            md:items-start md:justify-center md:gap-[40px]
-            
-            lg:flex-row lg:w-[80%] lg:flex-wrap
-            lg:items-center lg:justify-center lg:gap-[40px]
-            '>
-                {ourStory.map((item) => (
-                <div key={item.id} className={`
-                    flex flex-col items-center gap-[10px]
+                lg:text-[40px]
+                '>
+                    Our Story
+                </h3>
+                <div className=' flex flex-col
+                
+                md:flex-row md:w-full md:flex-wrap
+                md:items-start md:justify-center md:gap-[40px]
+                
+                lg:flex-row lg:w-[80%] lg:flex-wrap
+                lg:items-start lg:justify-center lg:gap-[40px]
+                '>
+                    {ourStory.map((item) => (
+                    <div key={item.id} className={`
+                        flex flex-col items-center gap-[10px]
 
-                    ${item.id == 4 
-                    ? 'md:w-full lg:w-[420px]' // Kelas untuk item TERAKHIR
-                    : 'md:w-[220px] lg:w-[420px]' // Kelas untuk item LAINNYA
-                    }
-                `}>
-                    <h4 className='
-                    HelveticaBold text-[17px]
+                        ${item.id == 4 
+                        ? 'md:w-full lg:w-[420px]' // Kelas untuk item TERAKHIR
+                        : 'md:w-[220px] lg:w-[420px]' // Kelas untuk item LAINNYA
+                        }
+                    `}>
+                        <h4 className='
+                        HelveticaBold text-[17px]
 
-                    lg:text-[25px]
-                    '>{item.title}</h4>
-                    <p className='
-                    Helvetica
-                    text-lg text-justify
-                    '>{item.text}</p>
+                        lg:text-[25px]
+                        '>{item.title}</h4>
+                        <p className='
+                        Helvetica
+                        text-lg text-justify
+                        '>{item.text}</p>
+                    </div>
+                ))}
                 </div>
-            ))}
             </div>
         </div>
         <div className='
@@ -312,9 +327,9 @@ function AboutUs() {
             
             lg:gap-[60px]
             '>
-                <img src={dummy2}
+                <img src={DOCS3}
                 className='
-                w-[150px]
+                w-[150px] 
                 rounded-[20px]
 
                 md:w-[280px]
@@ -452,7 +467,7 @@ function AboutUs() {
                         0 0 35px rgba(0, 191, 255, 0.6)
                         `
                     }}>
-                <img src={dummyGambar}
+                <img src={DOCS2}
                 ref={imageRef}
                 className='
                 w-[200px] rounded-[20px]

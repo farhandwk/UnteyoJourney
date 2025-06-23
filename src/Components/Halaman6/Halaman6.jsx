@@ -111,16 +111,16 @@ function Halaman6() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Mobile Blobs */}
         <div className="block md:hidden">
-          <div className="absolute top-1/4 left-1/4 w-48 h-48 md:w-64 md:h-64 bg-[#b22e15]/30 rounded-full blur-3xl animate-blob"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-48 h-48 md:w-64 md:h-64 bg-[#e0c39f]/30 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 w-48 h-48 md:w-64 md:h-64 bg-[#d67e45]/30 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+          <div className="absolute top-[30%] left-[15%] w-32 h-32 md:w-64 md:h-64 bg-[#b22e15]/30 rounded-full blur-2xl animate-blob"></div>
+          <div className="absolute top-[31%] right-[15%] w-28 h-28 md:w-64 md:h-64 bg-[#e0c39f]/30 rounded-full blur-2xl animate-blob animation-delay-2000"></div>
+          <div className="absolute top-[31%] right-[15%] w-28 h-28 md:w-64 md:h-64 bg-[#d67e45]/30 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
         </div>
 
         {/* Tablet Blobs */}
         <div className="hidden md:block lg:hidden">
-          <div className="blobMD absolute top-1/4 left-1/4 w-64 h-64 bg-[#b22e15]/30 rounded-full blur-3xl animate-blob-md"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#e0c39f]/30 rounded-full blur-3xl animate-blob-md animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-[#d67e45]/30 rounded-full blur-3xl animate-blob-md animation-delay-4000"></div>
+          <div className="blobMD absolute top-[30%] left-[15%] w-32 h-32 bg-[#b22e15]/30 rounded-full blur-3xl animate-blob-md"></div>
+          <div className="absolute top-[31%] right-[15%] w-28 h-28 bg-[#e0c39f]/30 rounded-full blur-3xl animate-blob-md animation-delay-2000"></div>
+          <div className="absolute top-[31%] right-[15%] w-28 h-28 bg-[#d67e45]/30 rounded-full blur-3xl animate-blob-md animation-delay-4000"></div>
         </div>
 
         {/* Desktop Blobs */}
