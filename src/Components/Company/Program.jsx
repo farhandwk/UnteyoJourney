@@ -195,12 +195,12 @@ function Program() {
                             <p className="text-2xl HelveticaBold">
                                 Program Overview
                             </p>
-                            <p className="text-xl mt-4"> 
+                            <p className="text-xl mt-4 text-justify"> 
                                 Our programs are designed as an integrated ecosystem to transform student potential into tangible impact. 
                                 We provide a platform and resources that encourage holistic self-development, challenging conventional 
                                 thinking through the application of critical and design thinking.
                             </p>
-                            <p className="text-xl mt-4"> 
+                            <p className="text-xl mt-4 text-justify"> 
                                 Each of our program pillars—from Creative Media to Social Education—serves as the foundation of our mission: 
                                 to empower students, transform passive learning into an active journey of self-development, and equip the next 
                                 generation of problem-solvers.
@@ -242,7 +242,7 @@ function Program() {
                         md:w-[600px] 
                         lg:w-[1000px]
                     ">
-                        <p className="text-xl">
+                        <p className="text-xl text-justify">
                             At the heart of our programs is the core belief that every student possesses 
                             a wealth of potential waiting to be unlocked. We champion a holistic approach 
                             to development, addressing both the academic and non-academic issues that affect 
@@ -314,7 +314,7 @@ function Program() {
 
                     ">
                         {/* Tab Content */}
-                        <div className="w-[95%] md:w-[90%] mx-auto text-white mb-[50px]">
+                        <div className="w-[95%] md:w-[90%] lg:w-[85%] mx-auto text-white mb-[50px]">
                             <h4 className="HelveticaBold md:text-[25px] lg:text-[25px] text-center">
                                 {tabContent[activeTab].title}
                             </h4>
