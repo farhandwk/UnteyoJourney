@@ -352,7 +352,7 @@ function Program() {
                                             onClick={() => handleThumbnailClick(img)}
                                             className={`w-20 h-12 md:w-24 md:h-16 object-cover rounded-lg cursor-pointer border-2 transition-transform duration-200 hover:scale-105 ${
                                                 selectedImage === img
-                                                    ? "border-blue-500 scale-105"
+                                                    ? "border-white-500 scale-105"
                                                     : "border-transparent hover:border-gray-400"
                                             }`}
                                         />
