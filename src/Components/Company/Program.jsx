@@ -123,6 +123,8 @@ function Program() {
         setOpenIndex(openIndex === index ? null : index);
     };
 
+
+
     return (
         <>
             <Header />
@@ -193,12 +195,12 @@ function Program() {
                             <p className="text-2xl HelveticaBold">
                                 Program Overview
                             </p>
-                            <p className="text-xl mt-4"> 
+                            <p className="text-xl mt-4 text-justify"> 
                                 Our programs are designed as an integrated ecosystem to transform student potential into tangible impact. 
                                 We provide a platform and resources that encourage holistic self-development, challenging conventional 
                                 thinking through the application of critical and design thinking.
                             </p>
-                            <p className="text-xl mt-4"> 
+                            <p className="text-xl mt-4 text-justify"> 
                                 Each of our program pillars—from Creative Media to Social Education—serves as the foundation of our mission: 
                                 to empower students, transform passive learning into an active journey of self-development, and equip the next 
                                 generation of problem-solvers.
@@ -240,7 +242,7 @@ function Program() {
                         md:w-[600px] 
                         lg:w-[1000px]
                     ">
-                        <p className="text-xl">
+                        <p className="text-xl text-justify">
                             At the heart of our programs is the core belief that every student possesses 
                             a wealth of potential waiting to be unlocked. We champion a holistic approach 
                             to development, addressing both the academic and non-academic issues that affect 
@@ -272,34 +274,34 @@ function Program() {
                         lg:text-[40px]
                         text-center
                     ">
-                        Dive into Our Programs
+                        Dive Into Our Programs
                     </h2>
 
-                    {/* <div className="bg-[#222] px-4 py-3 gap-2 rounded-xl flex flex-wrap justify-center w-fit mb-[75px] md:px-8 md:gap-10">
-                        {tabs.map((tab) => (
+                    {/* Wrapper untuk scroll horizontal di mobile */}
+                        <div className=" 
+                         overflow-x-scroll overflow-y-hidden Scrollbar-hide
+                         lg:overflow-x-hidden
+                         lg:flex flex-row
+                         lg:justify-center
+                         w-[300px] bg-[#222]
+                         md:w-[600px] lg:w-[1000px]
+                         rounded-xl  
+                         mb-[75px]">
+
+                            <div className=" w-max px-4 py-3 gap-4 lg:gap-10 flex flex-row">
+                            {tabs.map((tab) => (
                             <button
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
-                                className={`px-4 py-2 rounded-md transition-all duration-300 text-sm md:text-base whitespace-nowrap
-                                    ${activeTab === tab ? "bg-[#FF7A00] text-white" : "text-white hover:bg-[#333]"}`}
+                                className={` w-[120px] md:w-[150px] lg:w-[150px] px-4 py-2 rounded-md transition-all duration-300 text-sm md:text-base whitespace-nowrap
+                                ${activeTab === tab ? "bg-[#FF7A00] text-white" : "text-white hover:bg-[#333]"}`}
                             >
                                 {tab}
                             </button>
-                        ))}
-                    </div> */}
-
-                    <div className="bg-[#222] px-8 py-3 gap-10 rounded-xl flex justify-between w-fit mb-[75px]">
-                        {tabs.map((tab) => (
-                            <button
-                            key={tab}
-                            onClick={() => setActiveTab(tab)}
-                            className={`w-[150px] py-2 rounded-md transition-all duration-300
-                                ${activeTab === tab ? "bg-[#FF7A00] text-white" : "text-white hover:bg-[#333]"}`}
-                            >
-                            {tab}
-                            </button>
-                        ))}
+                            ))}
+                        </div>
                     </div>
+
                     
                     <div className="
                         flex flex-col
@@ -308,19 +310,20 @@ function Program() {
                         justify-center
                         w-[95%]
                         md:w-[85%]
-                        lg:w-[670px]
+                        lg:w-[900px]
+
                     ">
                         {/* Tab Content */}
-                        <div className="w-[95%] md:w-[85%] lg:w-[800px] mx-auto text-white mb-[50px]">
+                        <div className="w-[95%] md:w-[90%] lg:w-[85%] mx-auto text-white mb-[50px]">
                             <h4 className="HelveticaBold md:text-[25px] lg:text-[25px] text-center">
                                 {tabContent[activeTab].title}
                             </h4>
-                            <p className="text-xl mt-4 text-justify text-left">
+                            <p className="text-xl mt-4 text-justify">
                                 {tabContent[activeTab].description}
                             </p>
                         </div>
 
-                        <div className="flex flex-col items-center gap-6 p-6">
+                        <div className="flex flex-col items-center gap-9">
                             {/* Main Image */}
                             <div className="w-full max-w-[800px] aspect-video overflow-hidden rounded-xl shadow-xl">
                                 <motion.img
@@ -330,7 +333,11 @@ function Program() {
                                     initial={{ scale: 1.2, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
                                     transition={{ duration: 0.4 }}
-                                    className="w-full h-full object-cover"
+                                    className="
+                                    object-cover
+                                    w-[320px] h-[220px]
+                                    md:w-[600px] md:h-[400px]
+                                    lg:w-[750px] lg:h-[500px]"
                                 />
                             </div>
 
@@ -345,7 +352,7 @@ function Program() {
                                             onClick={() => handleThumbnailClick(img)}
                                             className={`w-20 h-12 md:w-24 md:h-16 object-cover rounded-lg cursor-pointer border-2 transition-transform duration-200 hover:scale-105 ${
                                                 selectedImage === img
-                                                    ? "border-blue-500 scale-105"
+                                                    ? "border-white-500 scale-105"
                                                     : "border-transparent hover:border-gray-400"
                                             }`}
                                         />
