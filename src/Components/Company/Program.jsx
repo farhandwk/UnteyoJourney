@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 import { motion } from "framer-motion";
 
 import img1 from "../../assets/exampleImage.JPG";
@@ -127,7 +128,7 @@ function Program() {
 
     return (
         <>
-            <Header />
+            <Header/>
             <div id="program" className="
                 bg-[black]
                 w-full h-full
@@ -504,6 +505,7 @@ function Program() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 }
