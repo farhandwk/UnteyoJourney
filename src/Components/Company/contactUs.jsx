@@ -102,7 +102,7 @@ function ContactUs() {
           <h3 className="text-[25px] lg:text-[25px] font-semibold text-center">Visit Our Hub</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-gray-800 p-6 text-center flex items-center justify-center">
-              <p className="text-lg font-medium">
+              <p className="text-[15px] lg:text-[20px] font-medium">
                 <strong>UTY Creative HUB</strong>
                 <br/>
                 Jl. Siliwangi Jl. Jombor Lor, Mlati Krajan, Sendangadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55284</p>
