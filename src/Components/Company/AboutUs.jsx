@@ -13,7 +13,7 @@ import Frederika from "../../assets/Team/Frederika.png"
 import DOCSBG from "../../assets/DOCS 1/DOCSBG.png"
 import DOCS1 from "../../assets/DOCS 1/DOCS1.png"
 import DOCS2 from "../../assets/DOCS 1/DOCS2.jpg"
-import DOCS3 from "../../assets/DOCS 1/DOCS3.png"
+import DOCS3 from "../../assets/DOCS 1/DOCS3.jpg"
 import DOCS4_1 from "../../assets/DOCS 1/DOCS4-1.png"
 import DOCS4_2 from "../../assets/DOCS 1/DOCS4-2.png"
 import DOCS4_3 from "../../assets/DOCS 1/DOCS4-3.png"
@@ -38,6 +38,13 @@ function AboutUs() {
         {id: '2', title: 'Our Core Believes', text: 'We believe every student possesses a wealth of potential waiting to be unlocked. We believe in a holistic approach to development that addresses both academic and non-academic issues affecting students. We hold that critical thinking and design thinking are fundamental skills for solving modern problems, and that quality, accessible content can inspire tangible, real-world action.'},
         {id: '3', title: 'Our Purpose', text: 'Our purpose is to be a dedicated student empowerment media platform. We provide the information, resources, and creative outlets necessary to transform passive media consumption into an active journey of self-development. We exist to equip students with the tools they need to navigate their challenges and create a strong foundation for their future.'},
         {id: '4', title: 'Our Future', text: 'We envision a future where Unteyo Journey is more than a platform—it is a thriving ecosystem. Our goal is to expand our reach and resources, fostering a dynamic community where students not only consume information but also collaborate to create real solutions for the world around them. By shaping this generation of innovators and problem-solvers, we are actively contributing to the development of superior human resources needed to realize the national vision of Indonesian Golden Age of 2045.'},
+    ]
+
+    const targetAudience = [
+        {id: 1, img: DOCS3},
+        {id: 2, img: DOCS3},
+        {id: 3, img: DOCS3},
+        {id: 4, img: DOCS3},
     ]
 
     const whatweDo = [
@@ -185,20 +192,27 @@ function AboutUs() {
             lg:w-[55%]
             '>
                 <h4 className='text-[25px]'>What Is Unteyo Journey?</h4>
-                <p className='text-lg'>
+                <p className='text-lg
+                text-justify
+
+                lg:text-start
+                '>
                     Part of the Hubung Group, it is a student empowerment media platform, providing information, resources, and creative outlets that encourage critical thinking, design thinking, and self-development.
                 </p>
-                <p className='text-lg'>
+                <p className='text-lg
+                text-justify
+
+                lg:text-start
+                '>
                     Addresses academic and non-academic issues affecting students, with a focus on problem solving and creating real impact.
                 </p>
             </div>
             </div>
         </div>
-        <div className='flex flex-col items-center p-[20px] pt-[40px] gap-[40px] mt-[100px]'>
+        <div className='flex flex-col items-center p-[20px] pt-[40px] gap-[40px] mt-[100px] relative z-[0]'>
             <h3 className='HelveticaBold text-[white]
             mb-[50px]
             text-[25px]
-
             lg:text-[40px]
             '>Core Values</h3>
             <div className='
@@ -223,25 +237,36 @@ function AboutUs() {
                     shrink-0
                     w-[250px]
                     Helvetica text-white 
-                    flex flex-col items-center 
+                    flex flex-col items-center justify-start
                     w-min-content
+                    gap-[20px]
 
                     md:w-[200px] 
+                    md:gap-[25px]
 
                     lg:w-[300px]
-                    lg:gap-[15px]
+                    lg:gap-[30px]
                     '>
+                        <div className='relative glowCore'></div>
                         <img src={item.img} className='
+                        w-[320px]
+                        glowCoreBG
                         rounded-[50%]
                         '></img>
-                        <h4 className='
-                        HelveticaBold
-                        text-[25px]
-                        text-center 
-                        '>{item.title}</h4>
-                        <p className='
-                        text-lg
-                        '>{item.text}</p>
+                        <div className='
+                        flex flex-col
+                        items-center justify-center
+                        '>
+                            <h4 className='
+                            HelveticaBold
+                            text-[25px]
+                            text-center
+                            test-center 
+                            '>{item.title}</h4>
+                            <p className='
+                            text-lg text-justify
+                            '>{item.text}</p>
+                        </div>
                     </div>
                 ))}
             </div>
@@ -321,13 +346,26 @@ function AboutUs() {
                 Target Audience
             </h3>
             <div className='
-            max-w-[100%] flex flex-row items-center justify-center gap-[10px]
+            max-w-[100%] flex flex-col items-center justify-center gap-[10px]
 
             md:gap-[60px]
             
             lg:gap-[60px]
+            lg:flex lg:flex-row lg:items-center lg:justify-center lg:gap-[10px]
             '>
-                <img src={DOCS3}
+                <div className='gridTargetContainer'>
+                    {targetAudience.map((item) => (
+                        <img key={item.id} src={item.img}
+                        className='rounded-[7%] p-[10px]
+                        
+                        w-[240px]
+
+                        md:w-[360px]
+                        '
+                        ></img>
+                    ))}
+                </div>
+                {/* <img src={DOCS3}
                 className='
                 w-[150px] 
                 rounded-[20px]
@@ -336,13 +374,13 @@ function AboutUs() {
                 
                 lg:w-[300px]
                 '
-                ></img>
+                ></img> */}
                 <p className='
                 Helvetica
                 text-[11.4px]
 
                 md:text-[20px]
-                md:w-[45%]
+                md:w-[90%]
                 
                 lg:text-[20px]
                 lg:w-[40%]
@@ -481,13 +519,19 @@ function AboutUs() {
                 scrollbar-hide
                 flex flex-col
                 h-[200px] overflow-scroll
+                gap-[30px]
 
                 md:h-auto
                 
                 lg:h-auto
                 '>
                     {whychooseUs.map((item) => (
-                    <div key={item.id}>
+                    <div key={item.id} className='gap-[3px] flex flex-col
+                    '>
+                        <div className={`
+                        w-full h-[2px] bg-white mb-[10px]
+                        ${item.id == 1 ? 'hidden' : ''}
+                    `} ></div>
                         <h4 className='
                         HelveticaBold
                         text-[18px] lg:text-[23px]
