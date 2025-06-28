@@ -11,16 +11,16 @@ function ContactUs() {
         <div className="text-center space-y-4">
           <h1 className="text-[40px] lg:text-[40px] font-bold">Contact Us</h1>
           <h3 className="text-[25px] lg:text-[25px] font-semibold pt-12.5">Get In Touch!!</h3>
-          <p className="text-[20px] lg:text-[20px]  text-gray-300">
+          <p className="text-[15px] lg:text-[20px]  text-gray-300">
             We are building a dynamic community of forward-thinkers and problem-solvers, and we would love to hear from you. Whether you have a question about our programs , an idea for collaboration , or feedback to share, our team is ready to assist. Your voice is crucial in helping us grow and improve our platform. Let's connect and shape the future of student empowerment together
           </p>
         </div>
 
         {/* Section: How Can We Assist You? */}
         <div className="space-y-6 pt-25 text-center flex flex-col items-center">
-        <h3 className="text-[25px] lg:text-[25px] font-semibold">How Can We Assist You?</h3>
+        <h3 className="text-[25px] lg:text-[25px] font-semibold ">How Can We Assist You?</h3>
         
-        <ul className="list-disc text-left pl-6 space-y-2 text-gray-300 text-[20px] lg:text-[20px]  md:text-base ">
+        <ul className="list-disc text-justify  pl-6 space-y-2 text-gray-300 text-[15px] lg:text-[20px]  md:text-base ">
             <li><strong>Partnerships & In-depth Inquiries</strong>: For inquiries regarding partnerships & collaboration , media & press , or to provide comprehensive suggestions & feedback, please reach out to us using the email address listed below. Our team will review your message and respond accordingly.</li>
             <li><strong>Quick Questions & Support</strong>: Have a general question about our programs  or need technical support with our platform? "Min Un" is here to help. For a faster response, please click and connect with us through the "Min Un" WhatsApp contact provided below.</li>
         </ul>
