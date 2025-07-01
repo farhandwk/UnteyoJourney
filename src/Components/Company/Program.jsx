@@ -326,7 +326,7 @@ function Program() {
 
                         <div className="flex flex-col items-center gap-9">
                             {/* Main Image */}
-                            <div className="w-full max-w-[800px] aspect-video overflow-hidden rounded-xl shadow-xl">
+                            <div className="w-full max-w-[800px] overflow-hidden rounded-xl shadow-xl">
                                 <motion.img
                                     key={zoomKey}
                                     src={selectedImage}
@@ -334,11 +334,13 @@ function Program() {
                                     initial={{ scale: 1.2, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
                                     transition={{ duration: 0.4 }}
-                                    className="
-                                    object-cover
-                                    w-[320px] h-[220px]
-                                    md:w-[600px] md:h-[400px]
-                                    lg:w-[750px] lg:h-[500px]"
+                                    className={`
+                                     object-cover
+                                     ${activeTab === 'Short Course'
+                                     ? 'w-[300px] h-[375px] md:w-[400px] md:h-[500px] lg:w-[400px] lg:h-[500px]'
+                                     : 'w-[320px] h-[220px] md:w-[600px] md:h-[400px] lg:w-[750px] lg:h-[500px]'
+                                     }
+                                    `}
                                 />
                             </div>
 
