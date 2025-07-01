@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
+import { motion, useScroll, useTransform } from "framer-motion";
 import "./Company.css"
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
@@ -24,7 +25,27 @@ import Think from "../../assets/CoreVaues/Think.png"
 import Impact from "../../assets/CoreVaues/Impact.png"
 import dummy2 from "../../assets/dummy.jpg"
 
+// Gunakan gambar dari placeholder service untuk contoh
+const image1 = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800";
+const image2 = "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800";
+
 function AboutUs() {
+    function useMediaQuery(query) {
+    const [matches, setMatches] = useState(false);
+
+    useEffect(() => {
+        const media = window.matchMedia(query);
+        if (media.matches !== matches) {
+        setMatches(media.matches);
+        }
+        const listener = () => setMatches(media.matches);
+        window.addEventListener('resize', listener);
+        return () => window.removeEventListener('resize', listener);
+    }, [matches, query]);
+
+    return matches;
+    }
+
     const coreValues = [
         {id: '1', img: Empowerment, title: 'Empowerment', text: 'We are dedicated to providing students with the tools, confidence, and resources to take ownership of their personal and professional growth.'},
         {id: '2', img: Creativity, title: 'Innovation & Creativity', text: 'We champion new ideas and provide creative outlets  that encourage students to challenge the status quo and pioneer fresh solutions.'},
@@ -47,10 +68,10 @@ function AboutUs() {
         {id: 4, img: DOCS3},
     ]
 
-    const whatweDo = [
-        {id: '1', img: atun, title: 'Curating Insightful Content', text: 'We consistently produce and share high-quality content, from in-depth articles to practical guides. Our topics are curated to cover the full student experience, addressing both academic and non-academic issues  while providing relevant knowledge and actionable resources for self-development.'},
-        {id: '2', img: atun, title: 'Facilitating Engaging Eventss', text: 'We regularly organize events, such as workshops, webinars, and discussions, designed to be interactive and inspiring. These gatherings provide a dynamic space for students to practice critical and design thinking, connect with peers and experts, and apply their learning to real-world challenges.'},
-        {id: '3', img: atun, title: 'Building an Empowerment Creative Platform', text: 'Beyond content and events, we provide a dedicated creative media platform that functions as a creative outlet for students. It’s an ecosystem where our community can access resources, showcase their projects, and engage in a supportive environment focused on turning potential into tangible impact.'},
+    const whatWeDo = [
+        {id: '1', img: DOCSBG, title: 'Curating Insightful Content', text: 'We consistently produce and share high-quality content, from in-depth articles to practical guides. Our topics are curated to cover the full student experience, addressing both academic and non-academic issues  while providing relevant knowledge and actionable resources for self-development.'},
+        {id: '2', img: DOCS3, title: 'Facilitating Engaging Eventss', text: 'We regularly organize events, such as workshops, webinars, and discussions, designed to be interactive and inspiring. These gatherings provide a dynamic space for students to practice critical and design thinking, connect with peers and experts, and apply their learning to real-world challenges.'},
+        {id: '3', img: DOCSBG, title: 'Building an Empowerment Creative Platform', text: 'Beyond content and events, we provide a dedicated creative media platform that functions as a creative outlet for students. It’s an ecosystem where our community can access resources, showcase their projects, and engage in a supportive environment focused on turning potential into tangible impact.'},
     ]
 
     const whychooseUs = [
@@ -149,6 +170,40 @@ function AboutUs() {
         scrollContainer.removeEventListener('scroll', handleScroll);
         };
     }, []); // Array dependensi kosong agar useEffect hanya berjalan sekali
+
+
+    const targetRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+        offset: ["start start", "end end"],
+    });
+
+    // State untuk melacak item mana yang aktif
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    // ▼▼▼ INI PERUBAHAN UTAMANYA ▼▼▼
+    // Deteksi apakah ini layar mobile (lebar di bawah 768px)
+    const isMobile = useMediaQuery("(max-width: 768px)");
+
+    // Tentukan rentang pergerakan 'x' berdasarkan ukuran layar
+    // Di mobile, pergerakannya lebih pendek agar tidak terpotong
+    const xRange = isMobile ? ["-10vw", "10vw"] : ["-35vw", "35vw"];
+    
+    const x = useTransform(scrollYProgress, [0.1, 0.9], xRange);
+    // ▲▲▲ BATAS AKHIR PERUBAHAN ▲▲▲
+
+    // 2. Efek untuk memantau scroll dan mengubah activeIndex
+    useEffect(() => {
+        // Fungsi 'on' dari motion value akan berjalan setiap kali nilainya berubah
+        const unsubscribe = scrollYProgress.on("change", (latest) => {
+        // Tentukan activeIndex berdasarkan progress scroll (0-1)
+        const newIndex = Math.floor(latest * whatWeDo.length);
+        setActiveIndex(newIndex > whatWeDo.length - 1 ? whatWeDo.length - 1 : newIndex);
+        });
+
+        // Cleanup function untuk memberhentikan listener saat komponen di-unmount
+        return () => unsubscribe();
+    }, [scrollYProgress]);
 
 
   return (
@@ -387,85 +442,66 @@ function AboutUs() {
                 '>Our platform is designed for proactive students, from those in higher education to individuals preparing for their university years. We cater to those who look beyond academic achievements and are actively seeking opportunities for self-development. Our ideal audience consists of forward-thinkers, creative problem-solvers, and future professionals who are eager to bridge the gap between theoretical knowledge and real-world application. Unteyo Journey is for every student who is ready to move beyond passive learning and take an active role in shaping their own future.</p>
             </div>
         </div>
-        <div className='
-        text-[white] p-[20px] flex flex-col items-center gap-[40px] pt-[40px]
-        mt-[100px] 
-        '>
-            <h3 className='
-            HelveticaBold text-[25px]
-            mb-[50px]
-
-            lg:text-[40px]
-            '>
-                What We Do?
-            </h3>
-            <div className='
-            scrollbar-hide
-            h-[500px] overflow-scroll
-            flex flex-col p-[20px]
-
-            md:flex-row md:items-center md:justify-center
-            md:gap-[40px] md:h-[700px]
-            
-            lg:flex-row lg:items-center lg:justify-center
-            lg:gap-[40px] lg:h-auto
-            '>
-                {whatweDo.map((item) => (
-            // div ini adalah container untuk satu item lengkap (gambar + teks)
-            <div key={item.id} className='flex flex-col items-center gap-[7px] w-[100%]
-
-            md:w-[30%]
-            
-            lg:w-[35%]
-            '>
-
-                {/* ===== DIV BARU UNTUK GLOW ===== */}
-                <div
-                className='flex items-center justify-center
-                w-[240px] h-[240px]
-                ' // Untuk menengahkan gambar di dalamnya
-                style={{
-                // Tumpuk beberapa gradien untuk efek yang kaya.
-                // Lapisan pertama akan berada paling atas.
-                background: `
-                /* LAPISAN 1: INTI GLOW (Kecil, Paling Terang) */
-                radial-gradient(
-                    circle,
-                    rgba(255, 200, 150, 0.7) 0%, /* Warna oranye pucat/hampir putih di tengah */
-                    transparent 35%             /* Cepat memudar menjadi transparan */
-                ),
-
-                /* LAPISAN 2: HALO UTAMA (Lebih Besar, Warna Utama) */
-                radial-gradient(
-                    circle,
-                    rgba(255, 122, 0, 0.5) 0%, /* Warna oranye Anda, lebih terang dari sebelumnya */
-                    transparent 60%            /* Memudar lebih lambat */
-                ),
-
-                /* LAPISAN 3: PENDARAN LUAR (Paling Besar & Lembut) */
-                radial-gradient(
-                    circle,
-                    rgba(255, 122, 0, 0.25) 0%, /* Sangat transparan */
-                    transparent 85%             /* Menyebar sangat jauh sebelum menghilang */
-                )
-                `
-            }}
-                >
-                {/* Gambar Anda sekarang berada di dalam div glow */}
-                <img
-                    src={item.img}
-                    className='w-[111px] h-[111px]' // Ukuran gambar lebih kecil dari div glow
-                    alt={item.title}
+        <section ref={targetRef} className="
+        relative
+        h-[300vh]
+        p-[0]
+        ">
+        <div className="sticky top-[0]
+        h-[100vh] overflow-hidden
+        ">
+            {/* Latar Belakang - Sekarang di-mapping dari data */}
+            <div className="background-images
+            absolute
+            top-[0] left-[0] w-[100%] h-[100%]
+            ">
+            {whatWeDo.map((item, index) => (
+                <motion.img
+                key={item.id}
+                src={item.img}
+                alt={item.title}
+                className="absolute w-[200vh] h-[100vh] object-cover
+                "
+                animate={{ opacity: index === activeIndex ? 1 : 0 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
                 />
-                </div>
-                {/* ===== AKHIR DARI DIV GLOW ===== */}
-
-                <h4 className='HelveticaBold text-[18px]'>{item.title}</h4>
-                <p className='Helvetica text-lg text-justify'>{item.text}</p>
-            </div>
             ))}
             </div>
+
+            {/* Konten di Depan */}
+            <div className="
+            relative z-[10] h-[100%] flex justify-center items-center
+            ">
+            {/* Kotak teks sekarang mengambil konten dari data[activeIndex] */}
+            <motion.div style={{ x }} className="
+            w-[35%] min-w-[300px] lg:h-auto
+            bg-[rgba(0,0,0,1)]
+            backdrop-blur-[10px] text-[white] border text-center p-10 rounded-[20px] border-solid border-[rgba(255,255,255,0.1)]
+            ">
+                <h3 className='
+                HelveticaBold
+                text-[25px]
+                pb-[20px]
+
+                lg:text-[40px]
+                '>What We Do?</h3>
+                <h4 className='
+                HelveticaBold
+                text-[17px]
+                pb-[15px]
+
+                lg:text-[25px]
+                '>{whatWeDo[activeIndex]?.title}</h4>
+                <p className='
+                Helvetica
+                text-[15px] text-justify
+
+                lg:text-[20px]
+                '>{whatWeDo[activeIndex]?.text}</p>
+            </motion.div>
+            </div>
         </div>
+        </section>
         <div className='
         text-[white]
         flex flex-col items-center gap-[40px] p-[20px] pt-[40px] mt-[100px]

@@ -1,5 +1,8 @@
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import UCH from "../../assets/uch-room.png"
+import Instagram from "../../assets/instagram-icon.png"
+import Email from "../../assets/email-icon.png"
 
 function ContactUs() {
   return (
@@ -38,7 +41,7 @@ function ContactUs() {
                 ">
             <div className="text-center space-y-2">
                 <img 
-                    src="/src/assets/email-icon.png" 
+                    src={Email} 
                     alt="email" 
                     className="
                         w-20
@@ -70,7 +73,7 @@ function ContactUs() {
             </div>
             <div className="text-center space-y-2">
                 <img
-                    src="/src/assets/instagram-icon.png"
+                    src={Instagram}
                     alt="instagram icon"
                     className="
                         w-20
@@ -108,7 +111,7 @@ function ContactUs() {
                 Jl. Siliwangi Jl. Jombor Lor, Mlati Krajan, Sendangadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55284</p>
             </div>
             <div>
-              <img src="/src/assets/uch-room.png" alt="Meeting Room" className="w-full rounded-md" />
+              <img src={UCH} alt="Meeting Room" className="w-full rounded-md" />
             </div>
           </div>
         </div>
